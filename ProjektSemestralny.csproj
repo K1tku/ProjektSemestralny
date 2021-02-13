@@ -82,14 +82,8 @@
     <Compile Include="Gry.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Okna\Gry.xaml.cs">
-      <DependentUpon>Gry.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Klienci.cs">
       <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Okna\Klienci.xaml.cs">
-      <DependentUpon>Klienci.xaml</DependentUpon>
     </Compile>
     <Compile Include="Model1.cs">
       <AutoGen>True</AutoGen>
@@ -99,11 +93,17 @@
     <Compile Include="Okna\OknoWyboru.xaml.cs">
       <DependentUpon>OknoWyboru.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Okna\TGry.xaml.cs">
+      <DependentUpon>TGry.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Okna\TKlienci.xaml.cs">
+      <DependentUpon>TKlienci.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Okna\TPracownicy.xaml.cs">
+      <DependentUpon>TPracownicy.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pracownicy.cs">
       <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Okna\Pracownicy.xaml.cs">
-      <DependentUpon>Pracownicy.xaml</DependentUpon>
     </Compile>
     <Compile Include="Wypozyczenia.cs">
       <DependentUpon>Model1.tt</DependentUpon>
@@ -117,14 +117,6 @@
     <Compile Include="Okna\Zwroty.xaml.cs">
       <DependentUpon>Zwroty.xaml</DependentUpon>
     </Compile>
-    <Page Include="Okna\Gry.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Okna\Klienci.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -141,7 +133,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Okna\Pracownicy.xaml">
+    <Page Include="Okna\TGry.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Okna\TKlienci.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Okna\TPracownicy.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

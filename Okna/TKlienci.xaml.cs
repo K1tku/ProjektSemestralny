@@ -12,16 +12,31 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace ProjektSemestralny
+namespace ProjektSemestralny.Okna
 {
     /// <summary>
-    /// Logika interakcji dla klasy Pracownicy.xaml
+    /// Logika interakcji dla klasy TKlienci.xaml
     /// </summary>
-    public partial class Pracownicy : Window
+    public partial class TKlienci : Window
     {
-        public Pracownicy()
+        public TKlienci()
         {
             InitializeComponent();
+        }
+
+        private void dodaj_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void uaktualnij_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Usun_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

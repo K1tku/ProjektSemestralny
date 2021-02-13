@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Data.SqlClient;
 
 namespace ProjektSemestralny
 {
@@ -24,5 +25,17 @@ namespace ProjektSemestralny
         {
             InitializeComponent();
         }
+
+        private void Zaloguj_Click(object sender, RoutedEventArgs e)
+        {
+            var w = Application.Current.Windows[0];
+            w.Hide();
+
+            OknoWyboru signIn = new OknoWyboru();
+            signIn.ShowDialog();
+            w.Show();
+        }
+
+        
     }
 }

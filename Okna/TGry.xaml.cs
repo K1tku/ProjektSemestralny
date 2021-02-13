@@ -12,16 +12,31 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace ProjektSemestralny
+namespace ProjektSemestralny.Okna
 {
     /// <summary>
-    /// Logika interakcji dla klasy Klienci.xaml
+    /// Logika interakcji dla klasy TGry.xaml
     /// </summary>
-    public partial class Klienci : Window
+    public partial class TGry : Window
     {
-        public Klienci()
+        public TGry()
         {
             InitializeComponent();
+        }
+
+        private void dodaj_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void uaktualnij_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Usun_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

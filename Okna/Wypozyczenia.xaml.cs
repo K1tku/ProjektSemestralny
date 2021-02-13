@@ -23,5 +23,20 @@ namespace ProjektSemestralny
         {
             InitializeComponent();
         }
+
+        private void dodaj_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void uaktualnij_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Usun_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

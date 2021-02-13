@@ -15,11 +15,12 @@
                 <TranslateTransform/>
             </TransformGroup>
         </Grid.RenderTransform>
-        <Button x:Name="Zwroty" Content="Zwroty" HorizontalAlignment="Left" Margin="161,412,0,0" VerticalAlignment="Top" Width="150" Height="50" FontSize="15" Click="Zwroty_Click"/>
-        <Button x:Name="Gry" Content="Gry" HorizontalAlignment="Left" Margin="161,150,0,0" VerticalAlignment="Top" Width="150" Height="50" FontSize="15" Click="Gry_Click"/>
-        <Button x:Name="Wypozyczenia" Content="Wypożyczenia" HorizontalAlignment="Left" Margin="161,237,0,0" VerticalAlignment="Top" Width="150" Height="50" FontSize="15" Click="Wypozyczenia_Click"/>
-        <Button x:Name="Klienci" Content="Klienci" HorizontalAlignment="Left" Margin="161,325,0,0" VerticalAlignment="Top" Width="150" Height="50" FontSize="15" Click="Klienci_Click"/>
-        <Button x:Name="Pracownicy" Content="Pracownicy" HorizontalAlignment="Left" Margin="161,67,0,0" VerticalAlignment="Top" Width="150" Height="50" FontSize="15" Click="Pracownicy_Click"/>
+        <Button x:Name="Zwroty" Content="Zwroty" HorizontalAlignment="Left" Margin="161,426,0,0" VerticalAlignment="Top" Width="150" Height="50" FontSize="15" Click="Zwroty_Click"/>
+        <Button x:Name="Gry" Content="Gry" HorizontalAlignment="Left" Margin="161,186,0,0" VerticalAlignment="Top" Width="150" Height="50" FontSize="15" Click="Gry_Click"/>
+        <Button x:Name="Wypozyczenia" Content="Wypożyczenia" HorizontalAlignment="Left" Margin="161,267,0,0" VerticalAlignment="Top" Width="150" Height="50" FontSize="15" Click="Wypozyczenia_Click"/>
+        <Button x:Name="Klienci" Content="Klienci" HorizontalAlignment="Left" Margin="161,348,0,0" VerticalAlignment="Top" Width="150" Height="50" FontSize="15" Click="Klienci_Click"/>
+        <Button x:Name="Pracownicy" Content="Pracownicy" HorizontalAlignment="Left" Margin="161,104,0,0" VerticalAlignment="Top" Width="150" Height="50" FontSize="15" Click="Pracownicy_Click"/>
+        <Label Content="Wybierz tabelę" HorizontalAlignment="Left" Margin="161,24,0,0" VerticalAlignment="Top" Height="50" Width="150" FontSize="20"/>
 
     </Grid>
 </Window>

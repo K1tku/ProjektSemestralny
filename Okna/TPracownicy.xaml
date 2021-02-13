@@ -1,11 +1,11 @@
-﻿<Window x:Class="ProjektSemestralny.Wypozyczenia"
+﻿<Window x:Class="ProjektSemestralny.Okna.TPracownicy"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:ProjektSemestralny"
+        xmlns:local="clr-namespace:ProjektSemestralny.Okna"
         mc:Ignorable="d"
-        Title="Wypożyczenia" Height="480" Width="980">
+        Title="Pracownicy" Height="480" Width="980">
     <Grid Margin="0,0,3.6,-2" Background="#FFFFCA95">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="48*"/>
