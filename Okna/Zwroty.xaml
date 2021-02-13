@@ -6,16 +6,36 @@
         xmlns:local="clr-namespace:ProjektSemestralny"
         mc:Ignorable="d"
         Title="Zwroty" Height="480" Width="980">
-    <Grid Margin="0,0,3.6,-2" Background="#FFFFCA95">
+    <Grid Margin="0,0,3.6,-2" Background="#FFFFCA95" Loaded="DataGridZwroty_Loaded">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="48*"/>
             <ColumnDefinition Width="21*"/>
             <ColumnDefinition Width="902*"/>
         </Grid.ColumnDefinitions>
-        <DataGrid HorizontalAlignment="Left" Height="241" Margin="170.2,27,0,0" VerticalAlignment="Top" Width="720" Grid.Column="2"/>
+        <DataGrid x:Name="DataGridZwroty" HorizontalAlignment="Left" Height="241" Margin="170.2,27,0,0" VerticalAlignment="Top" Width="720" Grid.Column="2"/>
         <Button x:Name="dodaj" Content="Dodaj" HorizontalAlignment="Left" Margin="5.2,286,0,0" VerticalAlignment="Top" Width="100" Height="40" Click="dodaj_Click" Grid.Column="2"/>
         <Button x:Name="uaktualnij" Content="Uaktualnij" HorizontalAlignment="Left" Margin="5.2,345,0,0" VerticalAlignment="Top" Width="100" Height="40" Click="uaktualnij_Click" Grid.Column="2"/>
         <Button x:Name="Usun" Content="Usuń" HorizontalAlignment="Left" Margin="5.2,402,0,0" VerticalAlignment="Top" Width="100" Height="40" Click="Usun_Click" Grid.Column="2"/>
+        <Grid x:Name="grid1" HorizontalAlignment="Left" Margin="5,69,0,0" VerticalAlignment="Top" Grid.ColumnSpan="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Label Content="ID wypozyczenia:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="0" VerticalAlignment="Center"/>
+            <TextBox x:Name="iD_wypozyczeniaTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="3" Grid.Row="0" Text="{Binding ID_wypozyczenia, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
+            <Label Content="ID pracownika:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="1" VerticalAlignment="Center"/>
+            <TextBox x:Name="iD_pracownikaTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="3" Grid.Row="1" Text="{Binding ID_pracownika, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
+            <Label Content="data zwrotu:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="2" VerticalAlignment="Center"/>
+            <DatePicker x:Name="data_zwrotuDatePicker" Grid.Column="1" HorizontalAlignment="Left" Margin="3" Grid.Row="2" SelectedDate="{Binding data_zwrotu, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center"/>
+            <Label Content="doplaty:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="3" VerticalAlignment="Center"/>
+            <TextBox x:Name="doplatyTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="3" Grid.Row="3" Text="{Binding doplaty, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
+        </Grid>
 
     </Grid>
 </Window>
