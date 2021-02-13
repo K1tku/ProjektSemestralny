@@ -28,14 +28,37 @@ namespace ProjektSemestralny
 
         private void Zaloguj_Click(object sender, RoutedEventArgs e)
         {
-            var w = Application.Current.Windows[0];
-            w.Hide();
+            string uzytkownik = this.nazwau.Text;
+            string haslo = this.haslou.Password;
 
-            OknoWyboru signIn = new OknoWyboru();
-            signIn.ShowDialog();
-            w.Show();
+            if (SprawdzNazweiHaslo(uzytkownik, haslo))
+            {
+
+                var w = Application.Current.Windows[0];
+                w.Hide();
+
+                OknoWyboru signIn = new OknoWyboru();
+                signIn.ShowDialog();
+                w.Show();
+            }
+            else
+            {
+                MessageBox.Show("Niepoprawne dane");
+                return;
+            }
+        }
+        public bool SprawdzNazweiHaslo(string uzytkownik, string haslo)
+        {
+            if (uzytkownik == "user" & haslo == "user")
+                return true;
+            else
+            {
+                return false;
+            }
+            
         }
 
-        
+
+
     }
 }

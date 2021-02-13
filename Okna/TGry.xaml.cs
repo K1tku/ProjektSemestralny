@@ -11,6 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Data.SqlClient;
+using System.Data;
 
 namespace ProjektSemestralny.Okna
 {
@@ -19,6 +21,8 @@ namespace ProjektSemestralny.Okna
     /// </summary>
     public partial class TGry : Window
     {
+        public String connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB; Initial Catalog = Database1.mdf; Integrated Security=True; ";
+        
         public TGry()
         {
             InitializeComponent();
@@ -37,6 +41,29 @@ namespace ProjektSemestralny.Okna
         private void Usun_Click(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void DataGridGry_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+
+        private void updateDataGrid()
+        {
+            using (SqlConnection sqlCon = new SqlConnection(connectionString))
+            {
+                sqlCon.Open();
+                SqlDataAdapter sqlDa = new SqlDataAdapter("SELECT * FROM Gry.dbo", sqlCon);
+                DataTable dtbl = new DataTable();
+                sqlDa.Fill(dtbl);
+                DataGridGry.DataContext = dtbl;
+            }
+        }
+
+        private void DataGridGry_Loaded(object sender, RoutedEventArgs e)
+        {
+            updateDataGrid();
         }
     }
 }
