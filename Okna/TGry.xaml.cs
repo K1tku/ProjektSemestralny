@@ -23,6 +23,7 @@ namespace ProjektSemestralny.Okna
     {
         public String connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB; Initial Catalog = Database1.mdf; Integrated Security=True; ";
         
+
         public TGry()
         {
             InitializeComponent();
