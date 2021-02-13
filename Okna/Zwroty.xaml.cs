@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
 namespace ProjektSemestralny
+
 {
     /// <summary>
     /// Logika interakcji dla klasy Zwroty.xaml
