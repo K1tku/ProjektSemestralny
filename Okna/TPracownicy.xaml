@@ -6,16 +6,41 @@
         xmlns:local="clr-namespace:ProjektSemestralny.Okna"
         mc:Ignorable="d"
         Title="Pracownicy" Height="480" Width="980">
-    <Grid Margin="0,0,3.6,-2" Background="#FFFFCA95">
+    <Grid Margin="0,0,3.6,-2" Background="#FFFFCA95" Loaded="DataGridPracownicy_Loaded">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="48*"/>
             <ColumnDefinition Width="21*"/>
             <ColumnDefinition Width="902*"/>
         </Grid.ColumnDefinitions>
-        <DataGrid HorizontalAlignment="Left" Height="241" Margin="170.2,27,0,0" VerticalAlignment="Top" Width="720" Grid.Column="2"/>
+        <DataGrid x:Name="DataGridPracownicy" HorizontalAlignment="Left" Height="241" Margin="170.2,27,0,0" VerticalAlignment="Top" Width="720" Grid.Column="2"/>
         <Button x:Name="dodaj" Content="Dodaj" HorizontalAlignment="Left" Margin="5.2,286,0,0" VerticalAlignment="Top" Width="100" Height="40" Click="dodaj_Click" Grid.Column="2"/>
         <Button x:Name="uaktualnij" Content="Uaktualnij" HorizontalAlignment="Left" Margin="5.2,345,0,0" VerticalAlignment="Top" Width="100" Height="40" Click="uaktualnij_Click" Grid.Column="2"/>
         <Button x:Name="Usun" Content="Usuń" HorizontalAlignment="Left" Margin="5.2,402,0,0" VerticalAlignment="Top" Width="100" Height="40" Click="Usun_Click" Grid.Column="2"/>
-
+        <Grid x:Name="grid1" DataContext="{}" HorizontalAlignment="Left" Margin="13,51,0,0" VerticalAlignment="Top" Grid.ColumnSpan="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Label Content="ID pracownika:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="0" VerticalAlignment="Center"/>
+            <TextBox x:Name="iD_pracownikaTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="3" Grid.Row="0" Text="{Binding ID_pracownika, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
+            <Label Content="Imie:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="1" VerticalAlignment="Center"/>
+            <TextBox x:Name="imieTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="3" Grid.Row="1" Text="{Binding Imie, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
+            <Label Content="Nazwisko:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="2" VerticalAlignment="Center"/>
+            <TextBox x:Name="nazwiskoTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="3" Grid.Row="2" Text="{Binding Nazwisko, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
+            <Label Content="Data urodzenia:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="3" VerticalAlignment="Center"/>
+            <DatePicker x:Name="data_urodzeniaDatePicker" Grid.Column="1" HorizontalAlignment="Left" Margin="3" Grid.Row="3" SelectedDate="{Binding Data_urodzenia, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center"/>
+            <Label Content="Adres:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="4" VerticalAlignment="Center"/>
+            <TextBox x:Name="adresTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="3" Grid.Row="4" Text="{Binding Adres, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
+            <Label Content="Stanowisko:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="5" VerticalAlignment="Center"/>
+            <TextBox x:Name="stanowiskoTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="3" Grid.Row="5" Text="{Binding Stanowisko, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
+        </Grid>
     </Grid>
 </Window>
