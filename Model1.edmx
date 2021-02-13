@@ -1,0 +1,398 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Database1Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Gry">
+          <Key>
+            <PropertyRef Name="ID_gry" />
+          </Key>
+          <Property Name="ID_gry" Type="int" Nullable="false" />
+          <Property Name="Nazwa" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="Kategoria" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="Kategoria_wiekowa" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="Data_wydania" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="Cena_dzien" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Klienci">
+          <Key>
+            <PropertyRef Name="ID_klienta" />
+          </Key>
+          <Property Name="ID_klienta" Type="int" Nullable="false" />
+          <Property Name="Nazwisko" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="Imie" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="Adres" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="Kod_pocztowy" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="Data_urodzenia" Type="date" Nullable="false" />
+          <Property Name="Numer_DO" Type="nchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Pracownicy">
+          <Key>
+            <PropertyRef Name="ID_pracownika" />
+          </Key>
+          <Property Name="ID_pracownika" Type="int" Nullable="false" />
+          <Property Name="Imie" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="Nazwisko" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="Data_urodzenia" Type="date" Nullable="false" />
+          <Property Name="Adres" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="Stanowisko" Type="nchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Wypozyczenia">
+          <Key>
+            <PropertyRef Name="ID_wypozyczenia" />
+          </Key>
+          <Property Name="ID_wypozyczenia" Type="int" Nullable="false" />
+          <Property Name="ID_Gry" Type="int" Nullable="false" />
+          <Property Name="ID_pracownika" Type="int" Nullable="false" />
+          <Property Name="ID_klienta" Type="int" Nullable="false" />
+          <Property Name="Data_wypozyczenia" Type="date" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Zwroty">
+          <Key>
+            <PropertyRef Name="ID_wypozyczenia" />
+          </Key>
+          <Property Name="ID_wypozyczenia" Type="int" Nullable="false" />
+          <Property Name="ID_pracownika" Type="int" Nullable="false" />
+          <Property Name="data_zwrotu" Type="date" Nullable="false" />
+          <Property Name="doplaty" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="RelacjaDoKlient">
+          <End Role="Klienci" Type="Self.Klienci" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Wypozyczenia" Type="Self.Wypozyczenia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Klienci">
+              <PropertyRef Name="ID_klienta" />
+            </Principal>
+            <Dependent Role="Wypozyczenia">
+              <PropertyRef Name="ID_klienta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="RelacjaGry">
+          <End Role="Gry" Type="Self.Gry" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Wypozyczenia" Type="Self.Wypozyczenia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Gry">
+              <PropertyRef Name="ID_gry" />
+            </Principal>
+            <Dependent Role="Wypozyczenia">
+              <PropertyRef Name="ID_Gry" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="RelacjaPracownicy">
+          <End Role="Pracownicy" Type="Self.Pracownicy" Multiplicity="1" />
+          <End Role="Wypozyczenia" Type="Self.Wypozyczenia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Pracownicy">
+              <PropertyRef Name="ID_pracownika" />
+            </Principal>
+            <Dependent Role="Wypozyczenia">
+              <PropertyRef Name="ID_pracownika" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Relacjapracownicy2">
+          <End Role="Pracownicy" Type="Self.Pracownicy" Multiplicity="1" />
+          <End Role="Zwroty" Type="Self.Zwroty" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Pracownicy">
+              <PropertyRef Name="ID_pracownika" />
+            </Principal>
+            <Dependent Role="Zwroty">
+              <PropertyRef Name="ID_pracownika" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="RelacjaWypozyczenia">
+          <End Role="Wypozyczenia" Type="Self.Wypozyczenia" Multiplicity="1" />
+          <End Role="Zwroty" Type="Self.Zwroty" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Wypozyczenia">
+              <PropertyRef Name="ID_wypozyczenia" />
+            </Principal>
+            <Dependent Role="Zwroty">
+              <PropertyRef Name="ID_wypozyczenia" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Database1ModelStoreContainer">
+          <EntitySet Name="Gry" EntityType="Self.Gry" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Klienci" EntityType="Self.Klienci" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Pracownicy" EntityType="Self.Pracownicy" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Wypozyczenia" EntityType="Self.Wypozyczenia" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Zwroty" EntityType="Self.Zwroty" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="RelacjaDoKlient" Association="Self.RelacjaDoKlient">
+            <End Role="Klienci" EntitySet="Klienci" />
+            <End Role="Wypozyczenia" EntitySet="Wypozyczenia" />
+          </AssociationSet>
+          <AssociationSet Name="RelacjaGry" Association="Self.RelacjaGry">
+            <End Role="Gry" EntitySet="Gry" />
+            <End Role="Wypozyczenia" EntitySet="Wypozyczenia" />
+          </AssociationSet>
+          <AssociationSet Name="RelacjaPracownicy" Association="Self.RelacjaPracownicy">
+            <End Role="Pracownicy" EntitySet="Pracownicy" />
+            <End Role="Wypozyczenia" EntitySet="Wypozyczenia" />
+          </AssociationSet>
+          <AssociationSet Name="Relacjapracownicy2" Association="Self.Relacjapracownicy2">
+            <End Role="Pracownicy" EntitySet="Pracownicy" />
+            <End Role="Zwroty" EntitySet="Zwroty" />
+          </AssociationSet>
+          <AssociationSet Name="RelacjaWypozyczenia" Association="Self.RelacjaWypozyczenia">
+            <End Role="Wypozyczenia" EntitySet="Wypozyczenia" />
+            <End Role="Zwroty" EntitySet="Zwroty" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Database1Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Gry">
+          <Key>
+            <PropertyRef Name="ID_gry" />
+          </Key>
+          <Property Name="ID_gry" Type="Int32" Nullable="false" />
+          <Property Name="Nazwa" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Kategoria" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Kategoria_wiekowa" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Data_wydania" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Cena_dzien" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Wypozyczenia" Relationship="Self.RelacjaGry" FromRole="Gry" ToRole="Wypozyczenia" />
+        </EntityType>
+        <EntityType Name="Klienci">
+          <Key>
+            <PropertyRef Name="ID_klienta" />
+          </Key>
+          <Property Name="ID_klienta" Type="Int32" Nullable="false" />
+          <Property Name="Nazwisko" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Imie" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Adres" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Kod_pocztowy" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Data_urodzenia" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Numer_DO" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Wypozyczenia" Relationship="Self.RelacjaDoKlient" FromRole="Klienci" ToRole="Wypozyczenia" />
+        </EntityType>
+        <EntityType Name="Pracownicy">
+          <Key>
+            <PropertyRef Name="ID_pracownika" />
+          </Key>
+          <Property Name="ID_pracownika" Type="Int32" Nullable="false" />
+          <Property Name="Imie" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Nazwisko" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Data_urodzenia" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Adres" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Stanowisko" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Wypozyczenia" Relationship="Self.RelacjaPracownicy" FromRole="Pracownicy" ToRole="Wypozyczenia" />
+          <NavigationProperty Name="Zwroty" Relationship="Self.Relacjapracownicy2" FromRole="Pracownicy" ToRole="Zwroty" />
+        </EntityType>
+        <EntityType Name="Wypozyczenia">
+          <Key>
+            <PropertyRef Name="ID_wypozyczenia" />
+          </Key>
+          <Property Name="ID_wypozyczenia" Type="Int32" Nullable="false" />
+          <Property Name="ID_Gry" Type="Int32" Nullable="false" />
+          <Property Name="ID_pracownika" Type="Int32" Nullable="false" />
+          <Property Name="ID_klienta" Type="Int32" Nullable="false" />
+          <Property Name="Data_wypozyczenia" Type="DateTime" Nullable="false" Precision="0" />
+          <NavigationProperty Name="Gry" Relationship="Self.RelacjaGry" FromRole="Wypozyczenia" ToRole="Gry" />
+          <NavigationProperty Name="Klienci" Relationship="Self.RelacjaDoKlient" FromRole="Wypozyczenia" ToRole="Klienci" />
+          <NavigationProperty Name="Pracownicy" Relationship="Self.RelacjaPracownicy" FromRole="Wypozyczenia" ToRole="Pracownicy" />
+          <NavigationProperty Name="Zwroty" Relationship="Self.RelacjaWypozyczenia" FromRole="Wypozyczenia" ToRole="Zwroty" />
+        </EntityType>
+        <EntityType Name="Zwroty">
+          <Key>
+            <PropertyRef Name="ID_wypozyczenia" />
+          </Key>
+          <Property Name="ID_wypozyczenia" Type="Int32" Nullable="false" />
+          <Property Name="ID_pracownika" Type="Int32" Nullable="false" />
+          <Property Name="data_zwrotu" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="doplaty" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Pracownicy" Relationship="Self.Relacjapracownicy2" FromRole="Zwroty" ToRole="Pracownicy" />
+          <NavigationProperty Name="Wypozyczenia" Relationship="Self.RelacjaWypozyczenia" FromRole="Zwroty" ToRole="Wypozyczenia" />
+        </EntityType>
+        <Association Name="RelacjaGry">
+          <End Role="Gry" Type="Self.Gry" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Wypozyczenia" Type="Self.Wypozyczenia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Gry">
+              <PropertyRef Name="ID_gry" />
+            </Principal>
+            <Dependent Role="Wypozyczenia">
+              <PropertyRef Name="ID_Gry" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="RelacjaDoKlient">
+          <End Role="Klienci" Type="Self.Klienci" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Wypozyczenia" Type="Self.Wypozyczenia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Klienci">
+              <PropertyRef Name="ID_klienta" />
+            </Principal>
+            <Dependent Role="Wypozyczenia">
+              <PropertyRef Name="ID_klienta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="RelacjaPracownicy">
+          <End Role="Pracownicy" Type="Self.Pracownicy" Multiplicity="1" />
+          <End Role="Wypozyczenia" Type="Self.Wypozyczenia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Pracownicy">
+              <PropertyRef Name="ID_pracownika" />
+            </Principal>
+            <Dependent Role="Wypozyczenia">
+              <PropertyRef Name="ID_pracownika" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Relacjapracownicy2">
+          <End Role="Pracownicy" Type="Self.Pracownicy" Multiplicity="1" />
+          <End Role="Zwroty" Type="Self.Zwroty" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Pracownicy">
+              <PropertyRef Name="ID_pracownika" />
+            </Principal>
+            <Dependent Role="Zwroty">
+              <PropertyRef Name="ID_pracownika" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="RelacjaWypozyczenia">
+          <End Role="Wypozyczenia" Type="Self.Wypozyczenia" Multiplicity="1" />
+          <End Role="Zwroty" Type="Self.Zwroty" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Wypozyczenia">
+              <PropertyRef Name="ID_wypozyczenia" />
+            </Principal>
+            <Dependent Role="Zwroty">
+              <PropertyRef Name="ID_wypozyczenia" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Database1Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Gry" EntityType="Self.Gry" />
+          <EntitySet Name="Klienci" EntityType="Self.Klienci" />
+          <EntitySet Name="Pracownicy" EntityType="Self.Pracownicy" />
+          <EntitySet Name="Wypozyczenia" EntityType="Self.Wypozyczenia" />
+          <EntitySet Name="Zwroty" EntityType="Self.Zwroty" />
+          <AssociationSet Name="RelacjaGry" Association="Self.RelacjaGry">
+            <End Role="Gry" EntitySet="Gry" />
+            <End Role="Wypozyczenia" EntitySet="Wypozyczenia" />
+          </AssociationSet>
+          <AssociationSet Name="RelacjaDoKlient" Association="Self.RelacjaDoKlient">
+            <End Role="Klienci" EntitySet="Klienci" />
+            <End Role="Wypozyczenia" EntitySet="Wypozyczenia" />
+          </AssociationSet>
+          <AssociationSet Name="RelacjaPracownicy" Association="Self.RelacjaPracownicy">
+            <End Role="Pracownicy" EntitySet="Pracownicy" />
+            <End Role="Wypozyczenia" EntitySet="Wypozyczenia" />
+          </AssociationSet>
+          <AssociationSet Name="Relacjapracownicy2" Association="Self.Relacjapracownicy2">
+            <End Role="Pracownicy" EntitySet="Pracownicy" />
+            <End Role="Zwroty" EntitySet="Zwroty" />
+          </AssociationSet>
+          <AssociationSet Name="RelacjaWypozyczenia" Association="Self.RelacjaWypozyczenia">
+            <End Role="Wypozyczenia" EntitySet="Wypozyczenia" />
+            <End Role="Zwroty" EntitySet="Zwroty" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Database1ModelStoreContainer" CdmEntityContainer="Database1Entities">
+          <EntitySetMapping Name="Gry">
+            <EntityTypeMapping TypeName="Database1Model.Gry">
+              <MappingFragment StoreEntitySet="Gry">
+                <ScalarProperty Name="ID_gry" ColumnName="ID_gry" />
+                <ScalarProperty Name="Nazwa" ColumnName="Nazwa" />
+                <ScalarProperty Name="Kategoria" ColumnName="Kategoria" />
+                <ScalarProperty Name="Kategoria_wiekowa" ColumnName="Kategoria_wiekowa" />
+                <ScalarProperty Name="Data_wydania" ColumnName="Data_wydania" />
+                <ScalarProperty Name="Cena_dzien" ColumnName="Cena_dzien" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Klienci">
+            <EntityTypeMapping TypeName="Database1Model.Klienci">
+              <MappingFragment StoreEntitySet="Klienci">
+                <ScalarProperty Name="ID_klienta" ColumnName="ID_klienta" />
+                <ScalarProperty Name="Nazwisko" ColumnName="Nazwisko" />
+                <ScalarProperty Name="Imie" ColumnName="Imie" />
+                <ScalarProperty Name="Adres" ColumnName="Adres" />
+                <ScalarProperty Name="Kod_pocztowy" ColumnName="Kod_pocztowy" />
+                <ScalarProperty Name="Data_urodzenia" ColumnName="Data_urodzenia" />
+                <ScalarProperty Name="Numer_DO" ColumnName="Numer_DO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Pracownicy">
+            <EntityTypeMapping TypeName="Database1Model.Pracownicy">
+              <MappingFragment StoreEntitySet="Pracownicy">
+                <ScalarProperty Name="ID_pracownika" ColumnName="ID_pracownika" />
+                <ScalarProperty Name="Imie" ColumnName="Imie" />
+                <ScalarProperty Name="Nazwisko" ColumnName="Nazwisko" />
+                <ScalarProperty Name="Data_urodzenia" ColumnName="Data_urodzenia" />
+                <ScalarProperty Name="Adres" ColumnName="Adres" />
+                <ScalarProperty Name="Stanowisko" ColumnName="Stanowisko" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Wypozyczenia">
+            <EntityTypeMapping TypeName="Database1Model.Wypozyczenia">
+              <MappingFragment StoreEntitySet="Wypozyczenia">
+                <ScalarProperty Name="ID_wypozyczenia" ColumnName="ID_wypozyczenia" />
+                <ScalarProperty Name="ID_Gry" ColumnName="ID_Gry" />
+                <ScalarProperty Name="ID_pracownika" ColumnName="ID_pracownika" />
+                <ScalarProperty Name="ID_klienta" ColumnName="ID_klienta" />
+                <ScalarProperty Name="Data_wypozyczenia" ColumnName="Data_wypozyczenia" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Zwroty">
+            <EntityTypeMapping TypeName="Database1Model.Zwroty">
+              <MappingFragment StoreEntitySet="Zwroty">
+                <ScalarProperty Name="ID_wypozyczenia" ColumnName="ID_wypozyczenia" />
+                <ScalarProperty Name="ID_pracownika" ColumnName="ID_pracownika" />
+                <ScalarProperty Name="data_zwrotu" ColumnName="data_zwrotu" />
+                <ScalarProperty Name="doplaty" ColumnName="doplaty" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
