@@ -21,8 +21,8 @@ namespace ProjektSemestralny.Okna
     /// </summary>
     public partial class TGry : Window
     {
-        public String connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB; Initial Catalog = Database1.mdf; Integrated Security=True; ";
-        
+        public String connection_String = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\C#\Projekty\ProjektSemestralny\Database1.mdf;Integrated Security=True";
+        public SqlConnection connection;
 
         public TGry()
         {
@@ -31,17 +31,63 @@ namespace ProjektSemestralny.Okna
 
         private void dodaj_Click(object sender, RoutedEventArgs e)
         {
+            string Query = "insert into Gry (ID_gry, Nazwa, Kategoria, Kategoria_wiekowa, Data_wydania, Cena_dzien) values('" + this.iD_gryTextBox.Text + "','" + this.nazwaTextBox.Text + "','" + this.kategoriaTextBox.Text + "','" + this.kategoria_wiekowaTextBox.Text + "','" + this.data_wydaniaTextBox.Text + "','" + this.cena_dzienTextBox.Text + "');";
+            SqlConnection conDataBase = new SqlConnection(connection_String);
+            SqlCommand cmdDataBase = new SqlCommand(Query, conDataBase);
+            SqlDataReader myReader;
+            try
+            {
+                conDataBase.Open();
+                myReader = cmdDataBase.ExecuteReader();
+                System.Windows.MessageBox.Show("Zapisano");
+                while (myReader.Read()) { }
 
+            }
+            catch (Exception ex)
+            {
+                System.Windows.MessageBox.Show(ex.Message);
+            }
+            updateDataGrid();
         }
 
         private void uaktualnij_Click(object sender, RoutedEventArgs e)
         {
-
+            string Query = "update Gry set ID_gry='" + this.iD_gryTextBox.Text + "', Nazwa='" + this.nazwaTextBox.Text + "',Kategoria='" + this.kategoriaTextBox.Text + "',Kategoria_wiekowa='" + this.kategoria_wiekowaTextBox.Text + "',Data_wydania='" + this.data_wydaniaTextBox.Text + "',Cena_dzien='" + this.cena_dzienTextBox.Text + "'where ID_gry='" + this.iD_gryTextBox.Text + "'; ";
+            SqlConnection conDataBase = new SqlConnection(connection_String);
+            SqlCommand cmdDataBase = new SqlCommand(Query, conDataBase);
+            SqlDataReader myReader;
+            try
+            {
+                conDataBase.Open();
+                myReader = cmdDataBase.ExecuteReader();
+                System.Windows.MessageBox.Show("Uaktualniono");
+                while (myReader.Read()) { }
+            }
+            catch (Exception ex)
+            {
+                System.Windows.MessageBox.Show(ex.Message);
+            }
+            updateDataGrid();
         }
 
         private void Usun_Click(object sender, RoutedEventArgs e)
         {
-
+            string Query = "delete from Gry where ID_gry='" + this.iD_gryTextBox.Text + "';";
+            SqlConnection conDataBase = new SqlConnection(connection_String);
+            SqlCommand cmdDataBase = new SqlCommand(Query, conDataBase);
+            SqlDataReader myReader;
+            try
+            {
+                conDataBase.Open();
+                myReader = cmdDataBase.ExecuteReader();
+                System.Windows.MessageBox.Show("Zapisano");
+                while (myReader.Read()) { }
+            }
+            catch (Exception ex)
+            {
+                System.Windows.MessageBox.Show(ex.Message);
+            }
+            updateDataGrid();
         }
 
         private void DataGridGry_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -52,14 +98,16 @@ namespace ProjektSemestralny.Okna
 
         private void updateDataGrid()
         {
-            using (SqlConnection sqlCon = new SqlConnection(connectionString))
-            {
-                sqlCon.Open();
-                SqlDataAdapter sqlDa = new SqlDataAdapter("SELECT * FROM Gry.dbo", sqlCon);
-                DataTable dtbl = new DataTable();
-                sqlDa.Fill(dtbl);
-                DataGridGry.DataContext = dtbl;
-            }
+            connection = new SqlConnection(connection_String); connection = new SqlConnection(connection_String);
+            connection.Open();
+            SqlCommand cmd = connection.CreateCommand();
+            cmd.CommandText = "SELECT ID_gry, Nazwa, Kategoria, Kategoria_wiekowa, Data_wydania, Cena_dzien from dbo.Gry";
+            cmd.CommandType = CommandType.Text;
+            SqlDataReader dr = cmd.ExecuteReader();
+            DataTable dt = new DataTable();
+            dt.Load(dr);
+            DataGridGry.ItemsSource = dt.DefaultView;
+            dr.Close();
         }
 
         private void DataGridGry_Loaded(object sender, RoutedEventArgs e)
