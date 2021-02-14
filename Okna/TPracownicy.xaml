@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProjektSemestralny.Okna"
         mc:Ignorable="d"
-        Title="Pracownicy" Height="480" Width="980">
+        Title="Pracownicy" Height="510" Width="980">
     <Grid Margin="0,0,3.6,-2" Background="#FFFFCA95" Loaded="DataGridPracownicy_Loaded">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="48*"/>
