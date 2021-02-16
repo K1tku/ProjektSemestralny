@@ -8,7 +8,7 @@
         Title="Pracownicy" Height="510" Width="980" Icon="Icon1.png">
     <Grid Margin="0,0,3.6,-2" Loaded="DataGridPracownicy_Loaded">
         <Grid.Background>
-            <ImageBrush ImageSource="/ProjektSemestralny;component/Diamond Games1.jpg"/>
+            <ImageBrush ImageSource="/ProjektSemestralny;component/Zdj/Diamond Games1.jpg"/>
         </Grid.Background>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="48*"/>

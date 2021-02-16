@@ -46,10 +46,8 @@ namespace ProjektSemestralny.Okna
                 conDataBase.Open();
                 myReader = cmdDataBase.ExecuteReader();
                 System.Windows.MessageBox.Show("Zapisano");
-                while (myReader.Read()) { }
-
-
-
+                while (myReader.Read()) { };
+                
 
 
             }
@@ -57,10 +55,8 @@ namespace ProjektSemestralny.Okna
             {
                 System.Windows.MessageBox.Show(ex.Message);
             }
+            conDataBase.Close();
             updateDataGrid();
-            
-           
-            //cmdDataBase.ExecuteNonQuery();
             
         }
 
@@ -76,11 +72,13 @@ namespace ProjektSemestralny.Okna
                 myReader = cmdDataBase.ExecuteReader();
                 System.Windows.MessageBox.Show("Uaktualniono");
                 while (myReader.Read()) { }
+                
             }
             catch (Exception ex)
             {
                 System.Windows.MessageBox.Show(ex.Message);
             }
+            conDataBase.Close();
             updateDataGrid();
             
             conDataBase.Close();
@@ -98,11 +96,13 @@ namespace ProjektSemestralny.Okna
                 myReader = cmdDataBase.ExecuteReader();
                 System.Windows.MessageBox.Show("Zapisano");
                 while (myReader.Read()) { }
+                
             }
             catch (Exception ex)
             {
                 System.Windows.MessageBox.Show(ex.Message);
             }
+            conDataBase.Close();
             updateDataGrid();
             
             conDataBase.Close();
@@ -116,7 +116,7 @@ namespace ProjektSemestralny.Okna
 
         private void updateDataGrid()
         {
-            connection = new SqlConnection(connection_String); connection = new SqlConnection(connection_String);
+            connection = new SqlConnection(connection_String);
             connection.Open();
             SqlCommand cmd = connection.CreateCommand();
             cmd.CommandText = "SELECT ID_gry, Nazwa, Kategoria, Kategoria_wiekowa, Data_wydania, Cena_dzien from dbo.Gry";
@@ -126,6 +126,7 @@ namespace ProjektSemestralny.Okna
             dt.Load(dr);
             DataGridGry.ItemsSource = dt.DefaultView;
             dr.Close();
+            connection.Close();
         }
 
         private void DataGridGry_Loaded(object sender, RoutedEventArgs e)

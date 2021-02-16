@@ -19,7 +19,7 @@ namespace ProjektSemestralny
     /// <summary>
     /// Logika interakcji dla klasy MainWindow.xaml
     /// </summary>
-    
+
     //Ta klasa sprawdza dane do logowania uzytkownika, gdy są błędne wyrzuca błąd.
     //Po poprawnym wprowadzeniu danych logowania przenosi do kolejnego okna.
     public partial class MainWindow : Window
@@ -50,6 +50,7 @@ namespace ProjektSemestralny
                 return;
             }
         }
+        // Sprawdza dane do logowania uzytkownika.
         public bool SprawdzNazweiHaslo(string uzytkownik, string haslo)
         {
             if (uzytkownik == "user" & haslo == "user")

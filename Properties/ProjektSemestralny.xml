@@ -1,0 +1,135 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ProjektSemestralny</name>
+    </assembly>
+    <members>
+        <member name="T:ProjektSemestralny.OknoWyboru">
+            <summary>
+            Logika interakcji dla klasy OknoWyboru.xaml
+            </summary>
+            <summary>
+            OknoWyboru
+            </summary>
+        </member>
+        <member name="M:ProjektSemestralny.OknoWyboru.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:ProjektSemestralny.Okna.TGry">
+            <summary>
+            Logika interakcji dla klasy TGry.xaml
+            </summary>
+            <summary>
+            TGry
+            </summary>
+        </member>
+        <member name="M:ProjektSemestralny.Okna.TGry.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:ProjektSemestralny.Okna.TKlienci">
+            <summary>
+            Logika interakcji dla klasy TKlienci.xaml
+            </summary>
+            <summary>
+            TKlienci
+            </summary>
+        </member>
+        <member name="M:ProjektSemestralny.Okna.TKlienci.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:ProjektSemestralny.Okna.TPracownicy">
+            <summary>
+            Logika interakcji dla klasy TPracownicy.xaml
+            </summary>
+            
+            <summary>
+            TPracownicy
+            </summary>
+        </member>
+        <member name="M:ProjektSemestralny.Okna.TPracownicy.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:ProjektSemestralny.Wypozyczenia">
+            <summary>
+            Logika interakcji dla klasy Wypozyczenia.xaml
+            </summary>
+            
+            <summary>
+            Wypozyczenia
+            </summary>
+        </member>
+        <member name="M:ProjektSemestralny.Wypozyczenia.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:ProjektSemestralny.Zwroty">
+            <summary>
+            Logika interakcji dla klasy Zwroty.xaml
+            </summary>
+            <summary>
+            Zwroty
+            </summary>
+        </member>
+        <member name="M:ProjektSemestralny.Zwroty.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:ProjektSemestralny.App">
+            <summary>
+            Logika interakcji dla klasy App.xaml
+            </summary>
+            <summary>
+            App
+            </summary>
+        </member>
+        <member name="M:ProjektSemestralny.App.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="M:ProjektSemestralny.App.Main">
+            <summary>
+            Application Entry Point.
+            </summary>
+        </member>
+        <member name="T:ProjektSemestralny.MainWindow">
+            <summary>
+            Logika interakcji dla klasy MainWindow.xaml
+            </summary>
+            <summary>
+            MainWindow
+            </summary>
+        </member>
+        <member name="M:ProjektSemestralny.MainWindow.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:ProjektSemestralny.Properties.Resources">
+            <summary>
+              Silnie typizowana klasa zasobów do wyszukiwania zlokalizowanych ciągów itd.
+            </summary>
+        </member>
+        <member name="P:ProjektSemestralny.Properties.Resources.ResourceManager">
+            <summary>
+              Zwraca buforowane wystąpienie składnika ResourceManager używane przez tę klasę.
+            </summary>
+        </member>
+        <member name="P:ProjektSemestralny.Properties.Resources.Culture">
+            <summary>
+              Przesłania właściwość CurrentUICulture bieżącego wątku dla wszystkich
+              przypadków przeszukiwania zasobów za pomocą tej silnie typizowanej klasy zasobów.
+            </summary>
+        </member>
+    </members>
+</doc>

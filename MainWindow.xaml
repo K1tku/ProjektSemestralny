@@ -5,10 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProjektSemestralny"
         mc:Ignorable="d"
-        Title="Logowanie" Height="380.4" Width="734" Icon="Icon1.png" Foreground="Black" Background="White">
+        Title="Logowanie" Height="380.4" Width="734" Icon="Zdj/Icon1.png" Foreground="Black" Background="White">
     <Grid Margin="0,0,-6,-3.8">
         <Grid.Background>
-            <ImageBrush ImageSource="Diamond Games1.jpg"/>
+            <ImageBrush ImageSource="Zdj/Diamond Games1.jpg"/>
         </Grid.Background>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="6*"/>
