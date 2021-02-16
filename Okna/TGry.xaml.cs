@@ -19,6 +19,10 @@ namespace ProjektSemestralny.Okna
     /// <summary>
     /// Logika interakcji dla klasy TGry.xaml
     /// </summary>
+     
+    //Ta klasa odpowiada za połączenie się z baza danych.
+    //Wyświetla tabele "Gry" w DataGrid.
+    //Pozwala modyfikować, dodawać oraz usuwać rekordy w bazie danych.
     public partial class TGry : Window
     {
 

@@ -20,6 +20,10 @@ namespace ProjektSemestralny
     /// <summary>
     /// Logika interakcji dla klasy Zwroty.xaml
     /// </summary>
+    
+    //Ta klasa odpowiada za połączenie się z baza danych.
+    //Wyświetla tabele "Zwroty" w DataGrid.
+    //Pozwala modyfikować, dodawać oraz usuwać rekordy w bazie danych.
     public partial class Zwroty : Window
     {
         //public String connection_String = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\C#\Projekty\ProjektSemestralny\Database1.mdf;Integrated Security=True";

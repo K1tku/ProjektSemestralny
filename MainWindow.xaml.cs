@@ -19,6 +19,9 @@ namespace ProjektSemestralny
     /// <summary>
     /// Logika interakcji dla klasy MainWindow.xaml
     /// </summary>
+    
+    //Ta klasa sprawdza dane do logowania uzytkownika, gdy są błędne wyrzuca błąd.
+    //Po poprawnym wprowadzeniu danych logowania przenosi do kolejnego okna.
     public partial class MainWindow : Window
     {
         public MainWindow()

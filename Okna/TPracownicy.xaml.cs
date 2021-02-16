@@ -19,6 +19,10 @@ namespace ProjektSemestralny.Okna
     /// <summary>
     /// Logika interakcji dla klasy TPracownicy.xaml
     /// </summary>
+    /// 
+    //Ta klasa odpowiada za połączenie się z baza danych.
+    //Wyświetla tabele "Pracownicy" w DataGrid.
+    //Pozwala modyfikować, dodawać oraz usuwać rekordy w bazie danych.
     public partial class TPracownicy : Window
     {
         //public String connection_String = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\C#\Projekty\ProjektSemestralny\Database1.mdf;Integrated Security=True";
