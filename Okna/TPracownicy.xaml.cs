@@ -38,6 +38,7 @@ namespace ProjektSemestralny.Okna
         /// </summary>
         public TPracownicy()
         {
+            WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
             InitializeComponent();
         }
 

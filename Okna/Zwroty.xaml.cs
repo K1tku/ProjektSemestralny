@@ -39,6 +39,7 @@ namespace ProjektSemestralny
         /// </summary>
         public Zwroty()
         {
+            WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
             InitializeComponent();
         }
 

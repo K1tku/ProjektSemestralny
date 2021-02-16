@@ -38,6 +38,7 @@ namespace ProjektSemestralny.Okna
         /// </summary>
         public TKlienci()
         {
+            WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
             InitializeComponent();
         }
 

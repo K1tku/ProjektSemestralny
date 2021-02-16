@@ -12,6 +12,11 @@
             OknoWyboru
             </summary>
         </member>
+        <member name="M:ProjektSemestralny.OknoWyboru.#ctor">
+            <summary>
+            Ta klasa odpowiada za wbór oraz wyświetlenie tabeli jaką użytkownik chce zobaczyć.
+            </summary>
+        </member>
         <member name="M:ProjektSemestralny.OknoWyboru.InitializeComponent">
             <summary>
             InitializeComponent
@@ -25,6 +30,23 @@
             TGry
             </summary>
         </member>
+        <member name="F:ProjektSemestralny.Okna.TGry.connection_String">
+            <summary>
+            Dodanie conneciot_String do połączenia.
+            </summary>
+        </member>
+        <member name="F:ProjektSemestralny.Okna.TGry.connection">
+            <summary>
+            Łączenie się z baza danych.
+            </summary>
+        </member>
+        <member name="M:ProjektSemestralny.Okna.TGry.#ctor">
+            <summary>
+            Ta klasa odpowiada za połączenie się z baza danych.
+            Wyświetla tabele "Gry" w DataGrid.
+            Pozwala modyfikować, dodawać oraz usuwać rekordy w bazie danych.
+            </summary>
+        </member>
         <member name="M:ProjektSemestralny.Okna.TGry.InitializeComponent">
             <summary>
             InitializeComponent
@@ -36,6 +58,23 @@
             </summary>
             <summary>
             TKlienci
+            </summary>
+        </member>
+        <member name="F:ProjektSemestralny.Okna.TKlienci.connection_String">
+            <summary>
+            Dodanie conneciot_String do połączenia.
+            </summary>
+        </member>
+        <member name="F:ProjektSemestralny.Okna.TKlienci.connection">
+            <summary>
+            Łączenie się z baza danych.
+            </summary>
+        </member>
+        <member name="M:ProjektSemestralny.Okna.TKlienci.#ctor">
+            <summary>
+            Ta klasa odpowiada za połączenie się z baza danych.
+            Wyświetla tabele "Klienci" w DataGrid.
+            Pozwala modyfikować, dodawać oraz usuwać rekordy w bazie danych.
             </summary>
         </member>
         <member name="M:ProjektSemestralny.Okna.TKlienci.InitializeComponent">
@@ -52,6 +91,23 @@
             TPracownicy
             </summary>
         </member>
+        <member name="F:ProjektSemestralny.Okna.TPracownicy.connection_String">
+            <summary>
+            Dodanie conneciot_String do połączenia.
+            </summary>
+        </member>
+        <member name="F:ProjektSemestralny.Okna.TPracownicy.connection">
+            <summary>
+            Łączenie się z baza danych.
+            </summary>
+        </member>
+        <member name="M:ProjektSemestralny.Okna.TPracownicy.#ctor">
+            <summary>
+            Ta klasa odpowiada za połączenie się z baza danych.
+            Wyświetla tabele "Pracownicy" w DataGrid.
+            Pozwala modyfikować, dodawać oraz usuwać rekordy w bazie danych.
+            </summary>
+        </member>
         <member name="M:ProjektSemestralny.Okna.TPracownicy.InitializeComponent">
             <summary>
             InitializeComponent
@@ -66,6 +122,23 @@
             Wypozyczenia
             </summary>
         </member>
+        <member name="F:ProjektSemestralny.Wypozyczenia.connection_String">
+            <summary>
+            Dodanie conneciot_String do połączenia.
+            </summary>
+        </member>
+        <member name="F:ProjektSemestralny.Wypozyczenia.connection">
+            <summary>
+            Łączenie się z baza danych.
+            </summary>
+        </member>
+        <member name="M:ProjektSemestralny.Wypozyczenia.#ctor">
+            <summary>
+            Ta klasa odpowiada za połączenie się z baza danych.
+            Wyświetla tabele "Wypożyczenia" w DataGrid.
+            Pozwala modyfikować, dodawać oraz usuwać rekordy w bazie danych.
+            </summary>
+        </member>
         <member name="M:ProjektSemestralny.Wypozyczenia.InitializeComponent">
             <summary>
             InitializeComponent
@@ -77,6 +150,23 @@
             </summary>
             <summary>
             Zwroty
+            </summary>
+        </member>
+        <member name="F:ProjektSemestralny.Zwroty.connection_String">
+            <summary>
+            Dodanie conneciot_String do połączenia.
+            </summary>
+        </member>
+        <member name="F:ProjektSemestralny.Zwroty.connection">
+            <summary>
+            Łączenie się z baza danych.
+            </summary>
+        </member>
+        <member name="M:ProjektSemestralny.Zwroty.#ctor">
+            <summary>
+            Ta klasa odpowiada za połączenie się z baza danych.
+            Wyświetla tabele "Zwroty" w DataGrid.
+            Pozwala modyfikować, dodawać oraz usuwać rekordy w bazie danych.
             </summary>
         </member>
         <member name="M:ProjektSemestralny.Zwroty.InitializeComponent">
@@ -109,6 +199,20 @@
             <summary>
             MainWindow
             </summary>
+        </member>
+        <member name="M:ProjektSemestralny.MainWindow.#ctor">
+            <summary>
+            Ta klasa sprawdza dane do logowania uzytkownika, gdy są błędne wyrzuca błąd.
+            Po poprawnym wprowadzeniu danych logowania przenosi do kolejnego okna.
+            </summary>
+        </member>
+        <member name="M:ProjektSemestralny.MainWindow.SprawdzNazweiHaslo(System.String,System.String)">
+            <summary>
+            Sprawdza dane do logowania uzytkownika.
+            </summary>
+            <param name="uzytkownik"></param>
+            <param name="haslo"></param>
+            <returns></returns>
         </member>
         <member name="M:ProjektSemestralny.MainWindow.InitializeComponent">
             <summary>

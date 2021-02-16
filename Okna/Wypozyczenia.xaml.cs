@@ -39,6 +39,7 @@ namespace ProjektSemestralny
         /// </summary>
         public Wypozyczenia()
         {
+            WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
             InitializeComponent();
         }
 

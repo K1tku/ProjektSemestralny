@@ -27,6 +27,7 @@ namespace ProjektSemestralny
         /// </summary>
         public OknoWyboru()
         {
+            WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
             InitializeComponent();
         }
 

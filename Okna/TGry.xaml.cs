@@ -39,7 +39,9 @@ namespace ProjektSemestralny.Okna
         /// </summary>
         public TGry()
         {
+            WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
             InitializeComponent();
+            
         }
 
         private void dodaj_Click(object sender, RoutedEventArgs e)
