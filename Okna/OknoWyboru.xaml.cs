@@ -19,10 +19,12 @@ namespace ProjektSemestralny
     /// Logika interakcji dla klasy OknoWyboru.xaml
     /// </summary>
      
-    // Ta klasa odpowiada za wbór oraz wyświetlenie tabeli jaką użytkownik chce zobaczyć.
+    
     public partial class OknoWyboru : Window
     {
-        
+        /// <summary>
+        /// Ta klasa odpowiada za wbór oraz wyświetlenie tabeli jaką użytkownik chce zobaczyć.
+        /// </summary>
         public OknoWyboru()
         {
             InitializeComponent();

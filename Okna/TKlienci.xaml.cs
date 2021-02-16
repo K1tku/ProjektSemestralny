@@ -20,15 +20,22 @@ namespace ProjektSemestralny.Okna
     /// Logika interakcji dla klasy TKlienci.xaml
     /// </summary>
     
-    //Ta klasa odpowiada za połączenie się z baza danych.
-    //Wyświetla tabele "Klienci" w DataGrid.
-    //Pozwala modyfikować, dodawać oraz usuwać rekordy w bazie danych.
+    
     public partial class TKlienci : Window
     {
-        //public String connection_String = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\C#\Projekty\ProjektSemestralny\Database1.mdf;Integrated Security=True";
-        //public SqlConnection connection;
+        /// <summary>
+        /// Dodanie conneciot_String do połączenia.
+        /// </summary>
         public String connection_String = @"Data Source = (LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Database1.mdf;Integrated Security = True";
+        /// <summary>
+        /// Łączenie się z baza danych.
+        /// </summary>
         public SqlConnection connection;
+        /// <summary>
+        /// Ta klasa odpowiada za połączenie się z baza danych.
+        /// Wyświetla tabele "Klienci" w DataGrid.
+        /// Pozwala modyfikować, dodawać oraz usuwać rekordy w bazie danych.
+        /// </summary>
         public TKlienci()
         {
             InitializeComponent();

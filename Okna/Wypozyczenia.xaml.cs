@@ -20,14 +20,23 @@ namespace ProjektSemestralny
     /// Logika interakcji dla klasy Wypozyczenia.xaml
     /// </summary>
     /// 
-    //Ta klasa odpowiada za połączenie się z baza danych.
-    //Wyświetla tabele "Wypozyczenia" w DataGrid.
-    //Pozwala modyfikować, dodawać oraz usuwać rekordy w bazie danych.
+    
     public partial class Wypozyczenia : Window
     {
-      
+
+        /// <summary>
+        /// Dodanie conneciot_String do połączenia.
+        /// </summary>
         public String connection_String = @"Data Source = (LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Database1.mdf;Integrated Security = True";
+        /// <summary>
+        /// Łączenie się z baza danych.
+        /// </summary>
         public SqlConnection connection;
+        /// <summary>
+        /// Ta klasa odpowiada za połączenie się z baza danych.
+        /// Wyświetla tabele "Wypożyczenia" w DataGrid.
+        /// Pozwala modyfikować, dodawać oraz usuwać rekordy w bazie danych.
+        /// </summary>
         public Wypozyczenia()
         {
             InitializeComponent();
