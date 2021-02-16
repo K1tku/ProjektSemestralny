@@ -5,8 +5,19 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProjektSemestralny"
         mc:Ignorable="d"
-        Title="OknoWyboru" Height="556.09" Width="482.108">
-    <Grid Background="#FFFFCA95" Margin="0,0,0.6,1" RenderTransformOrigin="0.5,0.5">
+        Title="OknoWyboru" Height="556.09" Width="482.108" Icon="Icon1.png">
+    <Grid Margin="0,0,0.6,1" RenderTransformOrigin="0.5,0.5">
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="Black" Offset="0.984"/>
+                <GradientStop Color="#FFD4D4D4" Offset="0.279"/>
+                <GradientStop Color="#FFA0A0A0" Offset="0.651"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="8*"/>
+            <ColumnDefinition Width="467*"/>
+        </Grid.ColumnDefinitions>
         <Grid.RenderTransform>
             <TransformGroup>
                 <ScaleTransform/>
@@ -15,12 +26,12 @@
                 <TranslateTransform/>
             </TransformGroup>
         </Grid.RenderTransform>
-        <Button x:Name="Zwroty" Content="Zwroty" HorizontalAlignment="Left" Margin="161,426,0,0" VerticalAlignment="Top" Width="150" Height="50" FontSize="15" Click="Zwroty_Click"/>
-        <Button x:Name="Gry" Content="Gry" HorizontalAlignment="Left" Margin="161,186,0,0" VerticalAlignment="Top" Width="150" Height="50" FontSize="15" Click="Gry_Click"/>
-        <Button x:Name="Wypozyczenia" Content="Wypożyczenia" HorizontalAlignment="Left" Margin="161,267,0,0" VerticalAlignment="Top" Width="150" Height="50" FontSize="15" Click="Wypozyczenia_Click"/>
-        <Button x:Name="Klienci" Content="Klienci" HorizontalAlignment="Left" Margin="161,348,0,0" VerticalAlignment="Top" Width="150" Height="50" FontSize="15" Click="Klienci_Click"/>
-        <Button x:Name="Pracownicy" Content="Pracownicy" HorizontalAlignment="Left" Margin="161,104,0,0" VerticalAlignment="Top" Width="150" Height="50" FontSize="15" Click="Pracownicy_Click"/>
-        <Label Content="Wybierz tabelę" HorizontalAlignment="Left" Margin="161,24,0,0" VerticalAlignment="Top" Height="50" Width="150" FontSize="20"/>
+        <Button x:Name="Zwroty" Content="Zwroty" HorizontalAlignment="Left" Margin="152.848,426,0,0" VerticalAlignment="Top" Width="150" Height="50" FontSize="15" Click="Zwroty_Click" Grid.Column="1"/>
+        <Button x:Name="Gry" Content="Gry" HorizontalAlignment="Left" Margin="152.848,186,0,0" VerticalAlignment="Top" Width="150" Height="50" FontSize="15" Click="Gry_Click" Grid.Column="1"/>
+        <Button x:Name="Wypozyczenia" Content="Wypożyczenia" HorizontalAlignment="Left" Margin="152.848,267,0,0" VerticalAlignment="Top" Width="150" Height="50" FontSize="15" Click="Wypozyczenia_Click" Grid.Column="1"/>
+        <Button x:Name="Klienci" Content="Klienci" HorizontalAlignment="Left" Margin="152.848,348,0,0" VerticalAlignment="Top" Width="150" Height="50" FontSize="15" Click="Klienci_Click" Grid.Column="1"/>
+        <Button x:Name="Pracownicy" Content="Pracownicy" HorizontalAlignment="Left" Margin="152.848,104,0,0" VerticalAlignment="Top" Width="150" Height="50" FontSize="15" Click="Pracownicy_Click" Grid.Column="1"/>
+        <Label Content="Wybierz tabelę" HorizontalAlignment="Left" Margin="152.848,24,0,0" VerticalAlignment="Top" Height="50" Width="150" FontSize="20" Grid.Column="1"/>
 
     </Grid>
 </Window>

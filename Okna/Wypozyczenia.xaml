@@ -5,8 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProjektSemestralny"
         mc:Ignorable="d"
-        Title="Wypożyczenia" Height="510" Width="984.063">
-    <Grid Margin="0,0,3.6,-2" Background="#FFFFCA95" Loaded="DataGridWypozyczenia_Loaded">
+        Title="Wypożyczenia" Height="510" Width="984.063" Icon="Icon1.png">
+    <Grid Margin="0,0,3.6,-2" Loaded="DataGridWypozyczenia_Loaded">
+        <Grid.Background>
+            <ImageBrush ImageSource="/ProjektSemestralny;component/Diamond Games1.jpg"/>
+        </Grid.Background>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="48*"/>
             <ColumnDefinition Width="21*"/>

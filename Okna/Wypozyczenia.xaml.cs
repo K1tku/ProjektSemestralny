@@ -32,7 +32,7 @@ namespace ProjektSemestralny
 
         private void dodaj_Click(object sender, RoutedEventArgs e)
         {
-            string Query = "insert into Wypozyczenia (ID_wypozyczenia, ID_Gry, ID_pracownika, ID_klienta, Data_wypozyczenia) values('" + this.iD_wypozyczeniaTextBox.Text + "','" + this.iD_GryTextBox.Text + "','" + this.iD_pracownikaTextBox.Text + "','" + this.iD_klientaTextBox.Text + "','" + this.iD_wypozyczeniaTextBox.Text + "');";
+            string Query = "insert into Wypozyczenia (ID_wypozyczenia, ID_Gry, ID_pracownika, ID_klienta, Data_wypozyczenia) values('" + this.iD_wypozyczeniaTextBox.Text + "','" + this.iD_GryTextBox.Text + "','" + this.iD_pracownikaTextBox.Text + "','" + this.iD_klientaTextBox.Text + "','" + this.data_wypozyczeniaDatePicker.Text + "');";
             SqlConnection conDataBase = new SqlConnection(connection_String);
             SqlCommand cmdDataBase = new SqlCommand(Query, conDataBase);
             SqlDataReader myReader;
@@ -88,6 +88,7 @@ namespace ProjektSemestralny
                 System.Windows.MessageBox.Show(ex.Message);
             }
             updateDataGrid();
+           
         }
 
         private void DataGridWypozyczenia_Loaded(object sender, RoutedEventArgs e)

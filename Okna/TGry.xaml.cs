@@ -22,10 +22,8 @@ namespace ProjektSemestralny.Okna
     public partial class TGry : Window
     {
 
-        //public String connection_String = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\C#\Projekty\ProjektSemestralny\Database1.mdf;Integrated Security=True";
-
-        //public SqlConnection connection;
-        public String connection_String = @"Data Source = (LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Database1.mdf;Integrated Security = True";
+        
+         public String connection_String = @"Data Source = (LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Database1.mdf;Integrated Security = True";
         public SqlConnection connection;
 
         public TGry()
@@ -46,12 +44,20 @@ namespace ProjektSemestralny.Okna
                 System.Windows.MessageBox.Show("Zapisano");
                 while (myReader.Read()) { }
 
+
+
+
+
             }
             catch (Exception ex)
             {
                 System.Windows.MessageBox.Show(ex.Message);
             }
             updateDataGrid();
+            
+           
+            //cmdDataBase.ExecuteNonQuery();
+            
         }
 
         private void uaktualnij_Click(object sender, RoutedEventArgs e)
@@ -72,6 +78,8 @@ namespace ProjektSemestralny.Okna
                 System.Windows.MessageBox.Show(ex.Message);
             }
             updateDataGrid();
+            
+            conDataBase.Close();
         }
 
         private void Usun_Click(object sender, RoutedEventArgs e)
@@ -92,6 +100,8 @@ namespace ProjektSemestralny.Okna
                 System.Windows.MessageBox.Show(ex.Message);
             }
             updateDataGrid();
+            
+            conDataBase.Close();
         }
 
         private void DataGridGry_SelectionChanged(object sender, SelectionChangedEventArgs e)

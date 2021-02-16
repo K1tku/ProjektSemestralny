@@ -5,14 +5,22 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProjektSemestralny"
         mc:Ignorable="d"
-        Title="Logowanie" Height="380.4" Width="734">
-    <Grid Margin="0,0,-6,-3.8" Background="#FFFFCA95">
-        <Label Content="Zaloguj się!" HorizontalAlignment="Left" Margin="300,36,0,0" VerticalAlignment="Top" Height="50" Width="150" FontSize="20"/>
-        <Label Content="Nazwa użytkownika" HorizontalAlignment="Left" Margin="184,108,0,0" VerticalAlignment="Top" Height="50" Width="190" FontSize="20"/>
-        <Label Content="Hasło użytkownika" HorizontalAlignment="Left" Margin="184,158,0,0" VerticalAlignment="Top" Height="50" Width="190" FontSize="20"/>
-        <Button x:Name="Zaloguj" Content="Zaloguj" HorizontalAlignment="Left" Margin="324,235,0,0" VerticalAlignment="Top" Width="100" Height="39" Click="Zaloguj_Click"/>
-        <TextBox x:Name="nazwau" HorizontalAlignment="Left" Height="50" Margin="374,108,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
-        <PasswordBox x:Name="haslou" HorizontalAlignment="Left" Margin="374,158,0,0" VerticalAlignment="Top" Height="50" Width="150"/>
+        Title="Logowanie" Height="380.4" Width="734" Icon="Icon1.png" Foreground="Black" Background="White">
+    <Grid Margin="0,0,-6,-3.8">
+        <Grid.Background>
+            <ImageBrush ImageSource="Diamond Games1.jpg"/>
+        </Grid.Background>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="6*"/>
+            <ColumnDefinition Width="173*"/>
+            <ColumnDefinition Width="555*"/>
+        </Grid.ColumnDefinitions>
+        <Label Content="Zaloguj się!" HorizontalAlignment="Left" Margin="120.8,36,0,0" VerticalAlignment="Top" Height="50" Width="150" FontSize="20" Grid.Column="2"/>
+        <Label Content="Nazwa użytkownika" HorizontalAlignment="Left" Margin="4.8,108,0,0" VerticalAlignment="Top" Height="50" Width="190" FontSize="20" Grid.Column="2"/>
+        <Label Content="Hasło użytkownika" HorizontalAlignment="Left" Margin="4.8,158,0,0" VerticalAlignment="Top" Height="50" Width="190" FontSize="20" Grid.Column="2"/>
+        <Button x:Name="Zaloguj" Content="Zaloguj" HorizontalAlignment="Left" Margin="144.8,235,0,0" VerticalAlignment="Top" Width="100" Height="39" Click="Zaloguj_Click" Grid.Column="2"/>
+        <TextBox x:Name="nazwau" HorizontalAlignment="Left" Height="50" Margin="194.8,108,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" Grid.Column="2"/>
+        <PasswordBox x:Name="haslou" HorizontalAlignment="Left" Margin="194.8,158,0,0" VerticalAlignment="Top" Height="50" Width="150" Grid.Column="2"/>
 
     </Grid>
 </Window>

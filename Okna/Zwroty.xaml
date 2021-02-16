@@ -5,8 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProjektSemestralny"
         mc:Ignorable="d"
-        Title="Zwroty" Height="510" Width="980">
-    <Grid Margin="0,0,3.6,-2" Background="#FFFFCA95" Loaded="DataGridZwroty_Loaded">
+        Title="Zwroty" Height="510" Width="980" Icon="Icon1.png">
+    <Grid Margin="0,0,3.6,-2" Loaded="DataGridZwroty_Loaded">
+        <Grid.Background>
+            <ImageBrush ImageSource="/ProjektSemestralny;component/Diamond Games1.jpg"/>
+        </Grid.Background>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="48*"/>
             <ColumnDefinition Width="21*"/>
