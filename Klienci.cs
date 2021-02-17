@@ -19,7 +19,7 @@ namespace ProjektSemestralny
         {
             this.Wypozyczenia = new HashSet<Wypozyczenia>();
         }
-
+    
         public int ID_klienta { get; set; }
         public string Nazwisko { get; set; }
         public string Imie { get; set; }

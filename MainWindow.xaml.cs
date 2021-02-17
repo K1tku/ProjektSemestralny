@@ -76,7 +76,7 @@ namespace ProjektSemestralny
         {
             try
             {
-                Close();
+                this.Close();
             }
             catch(Exception ex)
             {

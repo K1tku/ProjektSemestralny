@@ -281,7 +281,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="Database1Entities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="Database1Entities1" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Gry" EntityType="Self.Gry" />
           <EntitySet Name="Klienci" EntityType="Self.Klienci" />
           <EntitySet Name="Pracownicy" EntityType="Self.Pracownicy" />
@@ -313,7 +313,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="Database1ModelStoreContainer" CdmEntityContainer="Database1Entities">
+        <EntityContainerMapping StorageEntityContainer="Database1ModelStoreContainer" CdmEntityContainer="Database1Entities1">
           <EntitySetMapping Name="Gry">
             <EntityTypeMapping TypeName="Database1Model.Gry">
               <MappingFragment StoreEntitySet="Gry">
