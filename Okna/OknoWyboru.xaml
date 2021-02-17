@@ -26,12 +26,14 @@
                 <TranslateTransform/>
             </TransformGroup>
         </Grid.RenderTransform>
+
         <Button x:Name="Zwroty" Content="Zwroty" HorizontalAlignment="Left" Margin="152.848,426,0,0" VerticalAlignment="Top" Width="150" Height="50" FontSize="15" Click="Zwroty_Click" Grid.Column="1"/>
         <Button x:Name="Gry" Content="Gry" HorizontalAlignment="Left" Margin="152.848,186,0,0" VerticalAlignment="Top" Width="150" Height="50" FontSize="15" Click="Gry_Click" Grid.Column="1"/>
         <Button x:Name="Wypozyczenia" Content="Wypożyczenia" HorizontalAlignment="Left" Margin="152.848,267,0,0" VerticalAlignment="Top" Width="150" Height="50" FontSize="15" Click="Wypozyczenia_Click" Grid.Column="1"/>
         <Button x:Name="Klienci" Content="Klienci" HorizontalAlignment="Left" Margin="152.848,348,0,0" VerticalAlignment="Top" Width="150" Height="50" FontSize="15" Click="Klienci_Click" Grid.Column="1"/>
         <Button x:Name="Pracownicy" Content="Pracownicy" HorizontalAlignment="Left" Margin="152.848,104,0,0" VerticalAlignment="Top" Width="150" Height="50" FontSize="15" Click="Pracownicy_Click" Grid.Column="1"/>
         <Label Content="Wybierz tabelę" HorizontalAlignment="Left" Margin="152.848,24,0,0" VerticalAlignment="Top" Height="50" Width="150" FontSize="20" Grid.Column="1"/>
+        <Button x:Name="wroc" Content="Wróć" Grid.Column="1" HorizontalAlignment="Left" Margin="357,475,0,0" VerticalAlignment="Top" Width="100" Height="40" FontSize="15" Click="wroc_Click"/>
 
     </Grid>
 </Window>

@@ -142,5 +142,14 @@ namespace ProjektSemestralny.Okna
         {
             updateDataGrid();
         }
+
+        private void wroc_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+
+            OknoWyboru signIn = new OknoWyboru();
+            signIn.Show();
+            
+        }
     }
 }

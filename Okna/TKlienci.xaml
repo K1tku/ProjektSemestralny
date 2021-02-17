@@ -15,6 +15,7 @@
             <ColumnDefinition Width="21*"/>
             <ColumnDefinition Width="902*"/>
         </Grid.ColumnDefinitions>
+        <Button x:Name="wroc" Content="Wróć" Grid.Column="2" HorizontalAlignment="Left" Margin="562.2,402,0,0" VerticalAlignment="Top" Width="100" Height="40" Click="wroc_Click"/>
         <DataGrid x:Name="DataGridKlienci" HorizontalAlignment="Left" Height="241" Margin="170.2,27,0,0" VerticalAlignment="Top" Width="720" Grid.Column="2"/>
         <Button x:Name="dodaj" Content="Dodaj" HorizontalAlignment="Left" Margin="5.2,286,0,0" VerticalAlignment="Top" Width="100" Height="40" Click="dodaj_Click" Grid.Column="2"/>
         <Button x:Name="uaktualnij" Content="Uaktualnij" HorizontalAlignment="Left" Margin="5.2,345,0,0" VerticalAlignment="Top" Width="100" Height="40" Click="uaktualnij_Click" Grid.Column="2"/>
@@ -49,6 +50,7 @@
             <DatePicker x:Name="data_urodzeniaDatePicker" Grid.Column="2" HorizontalAlignment="Left" Margin="2.8,4,0,4" Grid.Row="5" SelectedDate="{Binding Data_urodzenia, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center"/>
             <Label Content="Numer DO:" Grid.Column="0" HorizontalAlignment="Left" Margin="3,3,0,3" Grid.Row="6" VerticalAlignment="Center" Grid.ColumnSpan="2"/>
             <TextBox x:Name="numer_DOTextBox" Grid.Column="2" HorizontalAlignment="Left" Height="24" Margin="2.8,4,0,4" Grid.Row="6" Text="{Binding Numer_DO, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
+            
         </Grid>
     </Grid>
 </Window>

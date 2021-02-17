@@ -45,5 +45,6 @@
             <Label Content="Cena dzien:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="5" VerticalAlignment="Center"/>
             <TextBox x:Name="cena_dzienTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="3" Grid.Row="5" Text="{Binding Cena_dzien, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
         </Grid>
+        <Button x:Name="wroc" Content="Wróć" Grid.Column="2" HorizontalAlignment="Left" Margin="562.2,402,0,0" VerticalAlignment="Top" Width="100" Height="40" Click="wroc_Click"/>
     </Grid>
 </Window>

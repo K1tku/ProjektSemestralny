@@ -15,6 +15,7 @@
             <ColumnDefinition Width="21*"/>
             <ColumnDefinition Width="902*"/>
         </Grid.ColumnDefinitions>
+        <Button x:Name="wroc" Content="Wróć" Grid.Column="2" HorizontalAlignment="Left" Margin="562.2,402,0,0" VerticalAlignment="Top" Width="100" Height="40" Click="wroc_Click"/>
         <DataGrid x:Name="DataGridWypozyczenia" HorizontalAlignment="Left" Height="241" Margin="175.2,30,0,0" VerticalAlignment="Top" Width="720" Grid.Column="2"/>
         <Button x:Name="dodaj" Content="Dodaj" HorizontalAlignment="Left" Margin="5.2,286,0,0" VerticalAlignment="Top" Width="100" Height="40" Click="dodaj_Click" Grid.Column="2"/>
         <Button x:Name="uaktualnij" Content="Uaktualnij" HorizontalAlignment="Left" Margin="5.2,345,0,0" VerticalAlignment="Top" Width="100" Height="40" Click="uaktualnij_Click" Grid.Column="2"/>

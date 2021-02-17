@@ -33,60 +33,67 @@ namespace ProjektSemestralny
 
         private void Pracownicy_Click(object sender, RoutedEventArgs e)
         {
-           
+
+
+            this.Close();
+
+            Okna.TPracownicy signIn = new Okna.TPracownicy();
                 
-                var w = Application.Current.Windows[1];
-                w.Hide();
-                
-                Okna.TPracownicy signIn = new Okna.TPracownicy();
-                signIn.ShowDialog();
-                w.Show();
-            
+                signIn.Show();
+
+
 
         }
 
         private void Gry_Click(object sender, RoutedEventArgs e)
         {
-            var w = Application.Current.Windows[1];
-            w.Hide();
+            this.Close();
 
             Okna.TGry signIn = new Okna.TGry();
-            signIn.ShowDialog();
-            w.Show();
+            
+            signIn.Show();
+
 
         }
 
         private void Wypozyczenia_Click(object sender, RoutedEventArgs e)
         {
 
-            var w = Application.Current.Windows[1];
-            w.Hide();
+            this.Close();
 
             Wypozyczenia signIn = new Wypozyczenia();
-            signIn.ShowDialog();
-            w.Show();
+            
+            signIn.Show();
+
         }
 
         private void Klienci_Click(object sender, RoutedEventArgs e)
         {
-            var w = Application.Current.Windows[1];
-            w.Hide();
+            this.Close();
 
             Okna.TKlienci signIn = new Okna.TKlienci();
-            signIn.ShowDialog();
-            w.Show();
+            
+            signIn.Show();
 
         }
 
         private void Zwroty_Click(object sender, RoutedEventArgs e)
         {
-            var w = Application.Current.Windows[1];
-            w.Hide();
+            this.Close();
 
             Zwroty signIn = new Zwroty();
-            signIn.ShowDialog();
-            w.Show();
+            
+            signIn.Show();
 
+
+        }
+
+        private void wroc_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+
+            MainWindow signIn = new MainWindow();
+            signIn.Show();
         }
     }
 }

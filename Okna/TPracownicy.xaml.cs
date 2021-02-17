@@ -119,5 +119,13 @@ namespace ProjektSemestralny.Okna
             DataGridPracownicy.ItemsSource = dt.DefaultView;
             dr.Close();
         }
+
+        private void wroc_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+
+            OknoWyboru signIn = new OknoWyboru();
+            signIn.Show();
+        }
     }
 }

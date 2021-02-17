@@ -46,7 +46,7 @@ namespace ProjektSemestralny
 
                 OknoWyboru signIn = new OknoWyboru();
                 signIn.ShowDialog();
-                w.Show();
+                
             }
             else
             {
@@ -72,7 +72,17 @@ namespace ProjektSemestralny
             
         }
 
+        private void wyjdz_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                Close();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
 
-
+        }
     }
 }
