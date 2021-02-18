@@ -109,7 +109,6 @@ namespace ProjektSemestralny.Okna
         }
         private void updateDataGrid()
         {
-
             connection = new SqlConnection(connection_String); connection = new SqlConnection(connection_String);
             connection.Open();
             SqlCommand cmd = connection.CreateCommand();

@@ -20,9 +20,10 @@ namespace ProjektSemestralny
     /// Logika interakcji dla klasy MainWindow.xaml
     /// </summary>
 
-    
+
     public partial class MainWindow : Window
     {
+        #region MainWindow
         /// <summary>
         /// Ta klasa sprawdza dane do logowania uzytkownika, gdy są błędne wyrzuca błąd.
         /// Po poprawnym wprowadzeniu danych logowania przenosi do kolejnego okna.
@@ -31,7 +32,9 @@ namespace ProjektSemestralny
         {
             WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
             InitializeComponent();
+           
         }
+        #endregion
 
         private void Zaloguj_Click(object sender, RoutedEventArgs e)
         {
@@ -46,7 +49,7 @@ namespace ProjektSemestralny
 
                 OknoWyboru signIn = new OknoWyboru();
                 signIn.ShowDialog();
-                
+
             }
             else
             {
@@ -60,7 +63,7 @@ namespace ProjektSemestralny
         /// <param name="uzytkownik"></param>
         /// <param name="haslo"></param>
         /// <returns></returns>
-
+        
         public bool SprawdzNazweiHaslo(string uzytkownik, string haslo)
         {
             if (uzytkownik == "user" & haslo == "user")
@@ -84,5 +87,6 @@ namespace ProjektSemestralny
             }
 
         }
+        
     }
 }
