@@ -23,6 +23,7 @@ namespace ProjektSemestralny.Okna
     
     public partial class TPracownicy : Window
     {
+        #region connection_String
         /// <summary>
         /// Dodanie conneciot_String do połączenia.
         /// </summary>
@@ -31,6 +32,9 @@ namespace ProjektSemestralny.Okna
         /// Łączenie się z baza danych.
         /// </summary>
         public SqlConnection connection;
+        #endregion
+
+        #region TPracownicy
         /// <summary>
         /// Ta klasa odpowiada za połączenie się z baza danych.
         /// Wyświetla tabele "Pracownicy" w DataGrid.
@@ -41,7 +45,9 @@ namespace ProjektSemestralny.Okna
             WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
             InitializeComponent();
         }
+        #endregion
 
+        #region dodaj_Click
         private void dodaj_Click(object sender, RoutedEventArgs e)
         {
             string Query = "insert into Pracownicy (ID_pracownika, Imie, Nazwisko, Data_urodzenia, Adres, Stanowisko) values('" + this.iD_pracownikaTextBox.Text + "','" + this.imieTextBox.Text + "','" + this.nazwiskoTextBox.Text + "','" + this.data_urodzeniaDatePicker.Text + "','" + this.adresTextBox.Text + "','" + this.stanowiskoTextBox.Text + "');";
@@ -61,7 +67,9 @@ namespace ProjektSemestralny.Okna
             }
             updateDataGrid();
         }
+        #endregion
 
+        #region uaktualnij_Click
         private void uaktualnij_Click(object sender, RoutedEventArgs e)
         {
             string Query = "update Pracownicy set ID_pracownika='" + this.iD_pracownikaTextBox.Text + "',Imie='" + this.imieTextBox.Text + "',Nazwisko='" + this.nazwiskoTextBox.Text + "',Data_urodzenia='" + this.data_urodzeniaDatePicker.Text + "',Adres='" + this.adresTextBox.Text + "',Stanowisko='" + this.stanowiskoTextBox.Text + "' where ID_pracownika='" + this.iD_pracownikaTextBox.Text + "';";
@@ -81,7 +89,9 @@ namespace ProjektSemestralny.Okna
             }
             updateDataGrid();
         }
+        #endregion
 
+        #region Usun_Click
         private void Usun_Click(object sender, RoutedEventArgs e)
         {
             string Query = "delete from Pracownicy where ID_pracownika='" + this.iD_pracownikaTextBox.Text + "';";
@@ -101,11 +111,16 @@ namespace ProjektSemestralny.Okna
             }
             updateDataGrid();
         }
+        #endregion
 
+        #region DataGridPracownicy_Loaded
         private void DataGridPracownicy_Loaded(object sender, RoutedEventArgs e)
         {
             updateDataGrid();
         }
+        #endregion
+
+        #region updateDataGrid
         private void updateDataGrid()
         {   //pobieranie danych z bazy i wyswietlenie w DataGrid
             connection = new SqlConnection(connection_String); connection = new SqlConnection(connection_String);
@@ -119,7 +134,9 @@ namespace ProjektSemestralny.Okna
             DataGridPracownicy.ItemsSource = dt.DefaultView;
             dr.Close();
         }
+        #endregion
 
+        #region wroc_Click
         private void wroc_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
@@ -127,5 +144,6 @@ namespace ProjektSemestralny.Okna
             OknoWyboru signIn = new OknoWyboru();
             signIn.Show();
         }
+        #endregion
     }
 }

@@ -22,6 +22,7 @@ namespace ProjektSemestralny
     
     public partial class OknoWyboru : Window
     {
+        #region OknoWyboru
         /// <summary>
         /// Ta klasa odpowiada za wbór oraz wyświetlenie tabeli jaką użytkownik chce zobaczyć.
         /// </summary>
@@ -30,7 +31,9 @@ namespace ProjektSemestralny
             WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
             InitializeComponent();
         }
+        #endregion
 
+        #region Pracownicy_Click
         private void Pracownicy_Click(object sender, RoutedEventArgs e)
         {
 
@@ -44,7 +47,9 @@ namespace ProjektSemestralny
 
 
         }
+        #endregion
 
+        #region Gry_Click
         private void Gry_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
@@ -55,7 +60,9 @@ namespace ProjektSemestralny
 
 
         }
+        #endregion
 
+        #region Wypozyczenia_Click
         private void Wypozyczenia_Click(object sender, RoutedEventArgs e)
         {
 
@@ -66,7 +73,9 @@ namespace ProjektSemestralny
             signIn.Show();
 
         }
+        #endregion
 
+        #region Klienci_Click
         private void Klienci_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
@@ -76,7 +85,9 @@ namespace ProjektSemestralny
             signIn.Show();
 
         }
+        #endregion
 
+        #region Zwroty_Click
         private void Zwroty_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
@@ -87,7 +98,9 @@ namespace ProjektSemestralny
 
 
         }
+        #endregion
 
+        #region wroc_Click
         private void wroc_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
@@ -95,5 +108,6 @@ namespace ProjektSemestralny
             MainWindow signIn = new MainWindow();
             signIn.Show();
         }
+        #endregion
     }
 }

@@ -23,7 +23,7 @@ namespace ProjektSemestralny
     
     public partial class Wypozyczenia : Window
     {
-
+        #region connection_String
         /// <summary>
         /// Dodanie conneciot_String do połączenia.
         /// </summary>
@@ -32,6 +32,9 @@ namespace ProjektSemestralny
         /// Łączenie się z baza danych.
         /// </summary>
         public SqlConnection connection;
+        #endregion
+
+        #region Wypozyczenia
         /// <summary>
         /// Ta klasa odpowiada za połączenie się z baza danych.
         /// Wyświetla tabele "Wypożyczenia" w DataGrid.
@@ -42,7 +45,9 @@ namespace ProjektSemestralny
             WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
             InitializeComponent();
         }
+        #endregion
 
+        #region dodaj_Click
         private void dodaj_Click(object sender, RoutedEventArgs e)
         {
             string Query = "insert into Wypozyczenia (ID_wypozyczenia, ID_Gry, ID_pracownika, ID_klienta, Data_wypozyczenia) values('" + this.iD_wypozyczeniaTextBox.Text + "','" + this.iD_GryTextBox.Text + "','" + this.iD_pracownikaTextBox.Text + "','" + this.iD_klientaTextBox.Text + "','" + this.data_wypozyczeniaDatePicker.Text + "');";
@@ -62,7 +67,9 @@ namespace ProjektSemestralny
             }
             updateDataGrid();
         }
+        #endregion
 
+        #region uaktualnij_Click
         private void uaktualnij_Click(object sender, RoutedEventArgs e)
         {
             string Query = "update Wypozyczenia set ID_wypozyczenia='" + this.iD_wypozyczeniaTextBox.Text + "',ID_Gry='" + this.iD_GryTextBox.Text + "',ID_pracownika='" + this.iD_pracownikaTextBox.Text + "',ID_klienta='" + this.iD_klientaTextBox.Text + "',ID_wypozyczenia='" + this.iD_wypozyczeniaTextBox.Text + "'where ID_wypozyczenia='" + this.iD_wypozyczeniaTextBox.Text + "';";
@@ -82,7 +89,9 @@ namespace ProjektSemestralny
             }
             updateDataGrid();
         }
+        #endregion
 
+        #region Usun_Click
         private void Usun_Click(object sender, RoutedEventArgs e)
         {
             string Query = "delete from Wypozyczenia where ID_wypozyczenia='" + this.iD_wypozyczeniaTextBox.Text + "';";
@@ -103,11 +112,16 @@ namespace ProjektSemestralny
             updateDataGrid();
            
         }
+        #endregion
 
+        #region DataGridWypozyczenia_Loaded
         private void DataGridWypozyczenia_Loaded(object sender, RoutedEventArgs e)
         {
             updateDataGrid();
         }
+        #endregion
+
+        #region updateDataGrid
         private void updateDataGrid()
         {
             connection = new SqlConnection(connection_String); connection = new SqlConnection(connection_String);
@@ -121,7 +135,9 @@ namespace ProjektSemestralny
             DataGridWypozyczenia.ItemsSource = dt.DefaultView;
             dr.Close();
         }
+        #endregion
 
+        #region wroc_Click
         private void wroc_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
@@ -129,5 +145,6 @@ namespace ProjektSemestralny
             OknoWyboru signIn = new OknoWyboru();
             signIn.Show();
         }
+        #endregion
     }
 }

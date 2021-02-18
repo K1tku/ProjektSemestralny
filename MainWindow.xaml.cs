@@ -36,6 +36,7 @@ namespace ProjektSemestralny
         }
         #endregion
 
+        #region Zaloguj_Click
         private void Zaloguj_Click(object sender, RoutedEventArgs e)
         {
             string uzytkownik = this.nazwau.Text;
@@ -57,13 +58,16 @@ namespace ProjektSemestralny
                 return;
             }
         }
+        #endregion
+
+        #region SprawdzNazweiHaslo
         /// <summary>
         /// Sprawdza dane do logowania uzytkownika.
         /// </summary>
         /// <param name="uzytkownik"></param>
         /// <param name="haslo"></param>
         /// <returns></returns>
-        
+
         public bool SprawdzNazweiHaslo(string uzytkownik, string haslo)
         {
             if (uzytkownik == "user" & haslo == "user")
@@ -74,7 +78,9 @@ namespace ProjektSemestralny
             }
             
         }
+        #endregion
 
+        #region wyjdz_Click
         private void wyjdz_Click(object sender, RoutedEventArgs e)
         {
             try
@@ -87,6 +93,7 @@ namespace ProjektSemestralny
             }
 
         }
-        
+        #endregion
+
     }
 }

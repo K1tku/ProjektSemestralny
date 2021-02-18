@@ -23,15 +23,19 @@ namespace ProjektSemestralny
     
    
     public partial class Zwroty : Window
-    {
-        /// <summary>
-        /// Dodanie conneciot_String do połączenia.
-        /// </summary>
-        public String connection_String = @"Data Source = (LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Database1.mdf;Integrated Security = True";
+    { 
+        #region connection_String
+    /// <summary>
+    /// Dodanie conneciot_String do połączenia.
+    /// </summary>
+    public String connection_String = @"Data Source = (LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Database1.mdf;Integrated Security = True";
         /// <summary>
         /// Łączenie się z baza danych.
         /// </summary>
         public SqlConnection connection;
+        #endregion
+
+        #region Zwroty
         /// <summary>
         /// Ta klasa odpowiada za połączenie się z baza danych.
         /// Wyświetla tabele "Zwroty" w DataGrid.
@@ -42,7 +46,9 @@ namespace ProjektSemestralny
             WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
             InitializeComponent();
         }
+        #endregion
 
+        #region dodaj_Click
         private void dodaj_Click(object sender, RoutedEventArgs e)
         {
             string Query = "insert into Zwroty (ID_wypozyczenia, ID_pracownika, data_zwrotu, doplaty) values('" + this.iD_wypozyczeniaTextBox.Text + "','" + this.iD_pracownikaTextBox.Text + "','" + this.data_zwrotuDatePicker.Text + "','" + this.doplatyTextBox.Text + "' );";
@@ -62,7 +68,9 @@ namespace ProjektSemestralny
             }
             updateDataGrid();
         }
+        #endregion
 
+        #region uaktualnij_Click
         private void uaktualnij_Click(object sender, RoutedEventArgs e)
         {
             string Query = "update Zwroty set ID_wypozyczenia='" + this.iD_wypozyczeniaTextBox.Text + "',ID_pracownika='" + this.iD_pracownikaTextBox.Text + "',data_zwrotu='" + this.data_zwrotuDatePicker.Text + "',doplaty='" + this.doplatyTextBox.Text + "' whereID_wypozyczenia='" + this.iD_wypozyczeniaTextBox.Text + "';";
@@ -82,7 +90,9 @@ namespace ProjektSemestralny
             }
             updateDataGrid();
         }
+        #endregion
 
+        #region Usun_Click
         private void Usun_Click(object sender, RoutedEventArgs e)
         {
             string Query = "delete from Zwroty  where ID_wypozyczenia='" + this.iD_wypozyczeniaTextBox.Text + "';";
@@ -102,11 +112,16 @@ namespace ProjektSemestralny
             }
             updateDataGrid();
         }
+        #endregion
 
+        #region DataGridZwroty_Loaded
         private void DataGridZwroty_Loaded(object sender, RoutedEventArgs e)
         {
             updateDataGrid();
         }
+        #endregion
+
+        #region updateDataGrid
         private void updateDataGrid()
         {  //pobieranie danych z bazy i wyswietlenie w DataGrid
             connection = new SqlConnection(connection_String); connection = new SqlConnection(connection_String);
@@ -121,7 +136,9 @@ namespace ProjektSemestralny
             DataGridZwroty.ItemsSource = dt.DefaultView;
             dr.Close();
         }
+        #endregion
 
+        #region wroc_Click
         private void wroc_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
@@ -129,5 +146,6 @@ namespace ProjektSemestralny
             OknoWyboru signIn = new OknoWyboru();
             signIn.Show();
         }
+        #endregion
     }
 }

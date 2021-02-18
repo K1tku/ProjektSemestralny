@@ -23,6 +23,7 @@ namespace ProjektSemestralny.Okna
     
     public partial class TKlienci : Window
     {
+        #region connection_String
         /// <summary>
         /// Dodanie conneciot_String do połączenia.
         /// </summary>
@@ -31,6 +32,9 @@ namespace ProjektSemestralny.Okna
         /// Łączenie się z baza danych.
         /// </summary>
         public SqlConnection connection;
+        #endregion
+
+        #region TKlienci
         /// <summary>
         /// Ta klasa odpowiada za połączenie się z baza danych.
         /// Wyświetla tabele "Klienci" w DataGrid.
@@ -41,7 +45,9 @@ namespace ProjektSemestralny.Okna
             WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
             InitializeComponent();
         }
+        #endregion
 
+        #region dodaj_Click
         private void dodaj_Click(object sender, RoutedEventArgs e)
         {
             string Query = "insert into Klienci (ID_klienta, Nazwisko, Imie, Adres, Kod_pocztowy, Data_urodzenia, Numer_DO) values('" + this.iD_klientaTextBox.Text + "','" + this.nazwiskoTextBox.Text + "','" + this.imieTextBox.Text + "','" + this.adresTextBox.Text + "','" + this.kod_pocztowyTextBox.Text + "','" + this.data_urodzeniaDatePicker + "','" + this.numer_DOTextBox.Text + "');";
@@ -62,7 +68,9 @@ namespace ProjektSemestralny.Okna
             updateDataGrid();
 
         }
+        #endregion
 
+        #region uaktualnij_Click
         private void uaktualnij_Click(object sender, RoutedEventArgs e)
         {
             string Query = "update Klienci set ID_klienta='" + this.iD_klientaTextBox.Text + "',Nazwisko='" + this.nazwiskoTextBox.Text + "',Imie='" + this.imieTextBox.Text + "',Adres='" + this.adresTextBox.Text + "',Kod_pocztowy='" + this.kod_pocztowyTextBox.Text + "',Data_urodzenia='" + this.data_urodzeniaDatePicker + "',Numer_DO='" + this.numer_DOTextBox.Text + "' where ID_klienta='" + this.iD_klientaTextBox.Text + "';";
@@ -82,7 +90,9 @@ namespace ProjektSemestralny.Okna
             }
             updateDataGrid();
         }
+        #endregion
 
+        #region Usun_Click
         private void Usun_Click(object sender, RoutedEventArgs e)
         {
             string Query = "delete from Klienci  where ID_klienta='" + this.iD_klientaTextBox.Text + "';";
@@ -102,11 +112,16 @@ namespace ProjektSemestralny.Okna
             }
             updateDataGrid();
         }
+        #endregion
 
+        #region DataGridKlienci_Loaded
         private void DataGridKlienci_Loaded(object sender, RoutedEventArgs e)
         {
             updateDataGrid();
         }
+        #endregion
+
+        #region updateDataGrid
         private void updateDataGrid()
         {
             connection = new SqlConnection(connection_String); connection = new SqlConnection(connection_String);
@@ -120,7 +135,9 @@ namespace ProjektSemestralny.Okna
             DataGridKlienci.ItemsSource = dt.DefaultView;
             dr.Close();
         }
+        #endregion
 
+        #region wroc_Click
         private void wroc_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
@@ -128,5 +145,6 @@ namespace ProjektSemestralny.Okna
             OknoWyboru signIn = new OknoWyboru();
             signIn.Show();
         }
+        #endregion
     }
 }
