@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjektSemestralny", "Proje
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestProject1", "UnitTestProject1\UnitTestProject1.csproj", "{C3E03FF8-D0BA-4F88-B695-C9BEF4648F16}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "DiamondGamesInstall", "DiamondGamesInstall\DiamondGamesInstall.vdproj", "{41BD27A9-CB07-42AF-A0E0-E8A8C5923D99}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,8 @@ Global
 		{C3E03FF8-D0BA-4F88-B695-C9BEF4648F16}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C3E03FF8-D0BA-4F88-B695-C9BEF4648F16}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C3E03FF8-D0BA-4F88-B695-C9BEF4648F16}.Release|Any CPU.Build.0 = Release|Any CPU
+		{41BD27A9-CB07-42AF-A0E0-E8A8C5923D99}.Debug|Any CPU.ActiveCfg = Debug
+		{41BD27A9-CB07-42AF-A0E0-E8A8C5923D99}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
