@@ -73,7 +73,7 @@ namespace ProjektSemestralny
         #region uaktualnij_Click
         private void uaktualnij_Click(object sender, RoutedEventArgs e)
         {
-            string Query = "update Zwroty set ID_wypozyczenia='" + this.iD_wypozyczeniaTextBox.Text + "',ID_pracownika='" + this.iD_pracownikaTextBox.Text + "',data_zwrotu='" + this.data_zwrotuDatePicker.Text + "',doplaty='" + this.doplatyTextBox.Text + "' whereID_wypozyczenia='" + this.iD_wypozyczeniaTextBox.Text + "';";
+            string Query = "update Zwroty set ID_wypozyczenia='" + this.iD_wypozyczeniaTextBox.Text + "',ID_pracownika='" + this.iD_pracownikaTextBox.Text + "',data_zwrotu='" + this.data_zwrotuDatePicker.Text + "',doplaty='" + this.doplatyTextBox.Text + "' where ID_wypozyczenia='" + this.iD_wypozyczeniaTextBox.Text + "';";
             SqlConnection conDataBase = new SqlConnection(connection_String);
             SqlCommand cmdDataBase = new SqlCommand(Query, conDataBase);
             SqlDataReader myReader;
