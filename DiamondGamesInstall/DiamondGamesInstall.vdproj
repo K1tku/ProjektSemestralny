@@ -39,12 +39,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_B3045C0672CE4838A9812B6CA289875E"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_BF28DD47A17942E4A448742356E4D953"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -52,6 +46,12 @@
         "Entry"
         {
         "MsmKey" = "8:_C87593E70FCD458D932B301B617ED056"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_D3C3434C8D8A42138C85AE46F1F3BDCE"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -273,10 +273,10 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_B3045C0672CE4838A9812B6CA289875E"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_C87593E70FCD458D932B301B617ED056"
             {
-            "SourcePath" = "8:..\\Properties\\Database1.mdf"
-            "TargetName" = "8:Database1.mdf"
+            "SourcePath" = "8:C:\\Users\\48576\\Desktop\\Icon1.png"
+            "TargetName" = "8:Icon1.png"
             "Tag" = "8:"
             "Folder" = "8:_CECDFAF8EDF940368136F205390E5034"
             "Condition" = "8:"
@@ -293,10 +293,10 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_C87593E70FCD458D932B301B617ED056"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_D3C3434C8D8A42138C85AE46F1F3BDCE"
             {
-            "SourcePath" = "8:C:\\Users\\48576\\Desktop\\Icon1.png"
-            "TargetName" = "8:Icon1.png"
+            "SourcePath" = "8:..\\Database1.mdf"
+            "TargetName" = "8:Database1.mdf"
             "Tag" = "8:"
             "Folder" = "8:_CECDFAF8EDF940368136F205390E5034"
             "Condition" = "8:"
