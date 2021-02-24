@@ -27,6 +27,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_99C7E0D78B504B60BD876505766474EC"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_9F3662CD3795B45D8E51F5941F1B10CA"
         "OwnerKey" = "8:_BF28DD47A17942E4A448742356E4D953"
         "MsmSig" = "8:_UNDEFINED"
@@ -45,19 +51,7 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_C87593E70FCD458D932B301B617ED056"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_D3C3434C8D8A42138C85AE46F1F3BDCE"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_FC44D03517D649849891CC4D3FC9F7C9"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -242,6 +236,26 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_99C7E0D78B504B60BD876505766474EC"
+            {
+            "SourcePath" = "8:..\\Icon1.ico"
+            "TargetName" = "8:Icon1.ico"
+            "Tag" = "8:"
+            "Folder" = "8:_CECDFAF8EDF940368136F205390E5034"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_9F3662CD3795B45D8E51F5941F1B10CA"
             {
             "AssemblyRegister" = "3:1"
@@ -273,50 +287,10 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_C87593E70FCD458D932B301B617ED056"
-            {
-            "SourcePath" = "8:C:\\Users\\48576\\Desktop\\Icon1.png"
-            "TargetName" = "8:Icon1.png"
-            "Tag" = "8:"
-            "Folder" = "8:_CECDFAF8EDF940368136F205390E5034"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_D3C3434C8D8A42138C85AE46F1F3BDCE"
             {
             "SourcePath" = "8:..\\Database1.mdf"
             "TargetName" = "8:Database1.mdf"
-            "Tag" = "8:"
-            "Folder" = "8:_CECDFAF8EDF940368136F205390E5034"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_FC44D03517D649849891CC4D3FC9F7C9"
-            {
-            "SourcePath" = "8:C:\\Users\\48576\\Desktop\\Icon1.png"
-            "TargetName" = "8:Icon1.ico"
             "Tag" = "8:"
             "Folder" = "8:_CECDFAF8EDF940368136F205390E5034"
             "Condition" = "8:"
@@ -388,9 +362,9 @@
         "Product"
         {
         "Name" = "8:Microsoft Visual Studio"
-        "ProductName" = "8:DiamondGamesInstall"
+        "ProductName" = "8:DiamondGames"
         "ProductCode" = "8:{4B978DA5-0CA7-4CAA-8E2B-2339A02EBDCA}"
-        "PackageCode" = "8:{D1F024AF-052A-4CA8-BA49-F4D4BC6A5734}"
+        "PackageCode" = "8:{E013CD4F-4AD5-43ED-BE36-D069D910552F}"
         "UpgradeCode" = "8:{E30DD43C-F888-4B20-8384-DBF9BBEB8278}"
         "AspNetVersion" = "8:2.0.50727.0"
         "RestartWWWService" = "11:FALSE"
@@ -407,7 +381,7 @@
         "Keywords" = "8:"
         "ARPCOMMENTS" = "8:Software Desc"
         "ARPURLINFOABOUT" = "8:"
-        "ARPPRODUCTICON" = "8:"
+        "ARPPRODUCTICON" = "8:_99C7E0D78B504B60BD876505766474EC"
         "ARPIconIndex" = "3:0"
         "SearchPath" = "8:"
         "UseSystemSearchPath" = "11:TRUE"
@@ -512,21 +486,7 @@
         {
             "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_7614DAD49ACB4A6988012297EF1B7B3E"
             {
-            "Name" = "8:Shortcut to Podstawowe wyjście from ProjektSemestralny (Active)"
-            "Arguments" = "8:"
-            "Description" = "8:"
-            "ShowCmd" = "3:1"
-            "IconIndex" = "3:0"
-            "Transitive" = "11:FALSE"
-            "Target" = "8:_BF28DD47A17942E4A448742356E4D953"
-            "Folder" = "8:_CECDFAF8EDF940368136F205390E5034"
-            "WorkingFolder" = "8:_CECDFAF8EDF940368136F205390E5034"
-            "Icon" = "8:"
-            "Feature" = "8:"
-            }
-            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_96E404678A404566BEED28C2253C63CD"
-            {
-            "Name" = "8:Shortcut to Podstawowe wyjście from ProjektSemestralny (Active) (2)"
+            "Name" = "8:DiamondGames"
             "Arguments" = "8:"
             "Description" = "8:"
             "ShowCmd" = "3:1"
@@ -534,8 +494,8 @@
             "Transitive" = "11:FALSE"
             "Target" = "8:_BF28DD47A17942E4A448742356E4D953"
             "Folder" = "8:_511183E6CBE744928AEE4C8BBBC0D3C6"
-            "WorkingFolder" = "8:_511183E6CBE744928AEE4C8BBBC0D3C6"
-            "Icon" = "8:"
+            "WorkingFolder" = "8:_CECDFAF8EDF940368136F205390E5034"
+            "Icon" = "8:_99C7E0D78B504B60BD876505766474EC"
             "Feature" = "8:"
             }
         }
