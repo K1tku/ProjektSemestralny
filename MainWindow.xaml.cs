@@ -42,7 +42,7 @@ namespace ProjektSemestralny
             string uzytkownik = this.nazwau.Text;
             string haslo = this.haslou.Password;
 
-            if (SprawdzNazweiHaslo(uzytkownik, haslo))
+            if (SprawdzNazweIhaslo(uzytkownik, haslo))
             {
 
                 var w = Application.Current.Windows[0];
@@ -65,19 +65,20 @@ namespace ProjektSemestralny
         /// Sprawdza dane do logowania uzytkownika.
         /// </summary>
         /// <param name="uzytkownik"></param>
-        /// <param name="haslo"></param>
+        /// <paraname="haslo"></param>
         /// <returns></returns>
 
-        public bool SprawdzNazweiHaslo(string uzytkownik, string haslo)
+        
+        public static bool SprawdzNazweIhaslo(string uzytkownik, string haslo)
         {
             if (uzytkownik == "user" & haslo == "user")
                 return true;
             else
             {
-                
+                MessageBox.Show("Błąd");
                 return false;
+                throw new ArgumentException("Bledny login i haslo");
             }
-            
         }
         #endregion
 
@@ -95,6 +96,6 @@ namespace ProjektSemestralny
 
         }
         #endregion
-
+        
     }
 }
